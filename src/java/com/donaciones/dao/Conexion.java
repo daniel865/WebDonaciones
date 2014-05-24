@@ -11,21 +11,36 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 
 /**
- *
- * @author Daniel
+ * Clase para conectarse con la base de especificando usuario, contraseña y 
+ * ubicación.
+ * @author Daniel Rúa Madrid
+ * @version 1.0, 23/05/2014
  */
+
 public class Conexion {
     
-    String user;
-    String password;
-    String url;
+    String user;  //Usuario para conectarse a la base de datos.
+    String password; //Contraseña de la base de datos.
+    String url; //Dirección de la base de datos.
 
+    /**
+     * Constructor para inicial el usuario, la contraseña y la ubicación
+     * de la base de datos.
+     * @param user
+     * @param password
+     * @param url
+     */
     public Conexion(String user, String password, String url) {
         this.user = user;
         this.password = password;
         this.url = url;
     }
     
+    /**
+     *
+     * @return DriveManager encargado de obtener la conexión.
+     * @throws Exception
+     */
     public Connection conectar()throws Exception{
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -35,6 +50,11 @@ public class Conexion {
         }
     }
     
+    /**
+     *
+     * @param connection
+     * @throws Exception
+     */
     public void cerrar(Connection connection)throws Exception{
         try {
             if ( connection!=null && !connection.isClosed() ){

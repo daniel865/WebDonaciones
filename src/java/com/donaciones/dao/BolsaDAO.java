@@ -15,13 +15,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author daniel
+ * Clase para hacer el CRUD de bolsas de sangre dentro de la base de datos.
+ * @author Daniel Rúa Madrid
+ * @since 23/05/2014
  */
 public class BolsaDAO extends BaseDAO{
 
     /**
-     *
+     * Constructor para iniciar la conexión a la base de datos.
      * @param connectionManager
      */
     public BolsaDAO(Conexion connectionManager) {
@@ -29,9 +30,9 @@ public class BolsaDAO extends BaseDAO{
     }
     
     /**
-     * METODO PARA CREAR BOLSA
-     * @param bolsa
-     * @throws Exception
+     * Crea una bolsa de sangre dentro de la base de datos.
+     * @param bolsa Objeto de tipo bolsa con los datos de la bolsa de sangre.
+     * @throws Exception Excepcion al intentar insertar la bolsa de sangre.
      */
     public void crearBolsa(Bolsa bolsa)throws Exception{
         Connection connection = null;
@@ -66,10 +67,10 @@ public class BolsaDAO extends BaseDAO{
     }
     
     /**
-     * METODO PARA BUSCAR LA BOLSA
-     * @param codigo
-     * @return
-     * @throws Exception
+     * Busca y devuelve una bolsa de sangre.
+     * @param codigo Código de la bolsa de sangre a buscar.
+     * @return La bolsa de sangre con los datos, sino se encuentra devuelve null.
+     * @throws Exception Error en el momento de buscar una bolsa de sangre.
      */
     public Bolsa buscarBolsa(String codigo)throws Exception{
         Connection connection = null;
@@ -100,9 +101,9 @@ public class BolsaDAO extends BaseDAO{
     }
     
     /**
-     * METODO PARA MODIFICAR BOLSA
-     * @param bolsa
-     * @throws Exception
+     * Modifica una bolsa de sangre, creada previamente.
+     * @param bolsa Objeto de tipo bolsa con los datos de la bolsa de sangre.
+     * @throws Exception Excepción al momento de modificar la bolsa de sangre.
      */
     public void modificarBolsa(Bolsa bolsa)throws Exception{
         Connection connection = null;
