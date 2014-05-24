@@ -1,0 +1,88 @@
+CREATE TABLE USUARIO (
+nroidentificacion_usu varchar(15),
+nombres_usu varchar(40),
+apellido1_usu varchar(20),
+apellido2_usu varchar(20),
+usuario_usu  varchar(10),
+correo_usu varchar(30),
+contrasenia_usu varchar(15),
+perfil_usu varchar(20),
+estado_usu varchar(15)
+);
+
+
+CREATE TABLE DONANTE(
+tipodocumento_don varchar(10),
+nroidentificacion_don varchar(20),
+nombres_don varchar(50),
+apellido1_don varchar(20),
+apellido2_don varchar(20),
+telefono_don long,
+direccion_don varchar(20),
+correo_don varchar(30),
+fec_nac_don date,
+fec_doc_don date,
+enfermedades_don varchar(100),
+habitos_don  varchar(80),
+nom_res_don varchar(50),
+tel_res_don long,
+genero_don varchar(10),
+departamento_don varchar(15),
+municipio_don varchar(15),
+estado_don varchar(10)
+);
+
+
+CREATE TABLE HOSPITAL(
+nit_hos varchar(10),
+tipo_hos varchar(10),
+razon_social_hos varchar(50),
+nivel_hos varchar(10),
+departamento_hos varchar(15),
+municipio_hos varchar(15),
+direccion_hos varchar(20),
+telefono_hos long,
+nombre_rep_hos  varchar(30),
+tel_rep_hos long,
+correo_rep_hos varchar(30),
+estado_hos varchar(10)
+);
+
+
+CREATE TABLE JORNADA(
+codigo_jor varchar(10),
+descripcion_jor varchar(200),
+fecha_jor date,
+departamento_jor varchar(15),
+municipio_jor varchar(15),
+direccion_jor varchar(20),
+cantidad_donantes_jor int,
+cantidad_sangre_jor int,
+estado_jor  varchar(10),
+observaciones_jor varchar(200)
+);
+
+
+CREATE TABLE BOLSA(
+codigo_bol varchar(10),
+jornada_don_bol varchar(10),
+grupo_sanguineo_bol varchar(10),
+rh_bol  varchar(5),
+fecha_donacion_bol  date,
+fecha_venci_bol  date,
+cantidad_sangre_bol  int,
+estado_bol varchar(10),
+observaciones_bol varchar(200)
+);
+
+CREATE TABLE DEPARTAMENTO (
+id_dep varchar(2),
+nombre_dep varchar(30)
+);
+
+CREATE TABLE MUNICIPIO(
+id_mun varchar(4),
+departamento_mun varchar(5),
+nombre_mun varchar(30)
+);
+
