@@ -18,7 +18,7 @@ public class BolsaDAO extends BaseDAO{
 
     /**
      * Constructor para iniciar la conexión a la base de datos.
-     * @param connectionManager
+     * @param connectionManager Manejador de la conexión.
      */
     public BolsaDAO(Conexion connectionManager) {
         super(connectionManager);

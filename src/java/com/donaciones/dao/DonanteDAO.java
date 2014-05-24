@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.donaciones.dao;
 
 import com.donaciones.entities.Donante;
@@ -15,14 +9,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author daniel
+ * Clase para hacer el CRUD de los donantes en la bolsa de sangre.
+ * @author Daniel Rúa Madrid
+ * @version 1.0
+ * @since 23/05/2014
  */
 public class DonanteDAO extends BaseDAO {
     
     /**
-     *
-     * @param connectionManager
+     * Constructor para iniciar la conexión a la base de datos.
+     * @param connectionManager Manejador de la Conexión.
      */
     public DonanteDAO(Conexion connectionManager) {
         super(connectionManager);
