@@ -4,7 +4,7 @@
     Author     : sala306
 --%>
 
-<%@page import="Entidades.Usuario" %>
+<%@page import="com.entities.Usuario" %>
 <%@page import="java.util.List" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -14,8 +14,9 @@
     Usuario datos = (Usuario) request.getSession().getAttribute("usuario") != null ? (Usuario) request.getSession().getAttribute("usuario") : null;
     String mensaje = request.getAttribute("mensaje") != null ? (String) request.getAttribute("mensaje") : null;
     String nro_identificacion = request.getAttribute("nro_identificacion") != null ? (String) request.getAttribute("nro_identificacion") : "";
-    String nombre = request.getAttribute("nombre") != null ? (String) request.getAttribute("nombre") : "";
-    String apellidos = request.getAttribute("apellidos") != null ? (String) request.getAttribute("apellidos") : "";
+    String nombres = request.getAttribute("nombres") != null ? (String) request.getAttribute("nombres") : "";
+    String apellido1 = request.getAttribute("apellido1") != null ? (String) request.getAttribute("apellido1") : "";
+    String apellido2 = request.getAttribute("apellido2") != null ? (String) request.getAttribute("apellido2") : "";
     String usuario = request.getAttribute("usuario") != null ? (String) request.getAttribute("usuario") : "";
     String correo = request.getAttribute("correo") != null ? (String) request.getAttribute("correo") : "";
     String pass = request.getAttribute("pass") != null ? (String) request.getAttribute("pass") : "";
@@ -73,7 +74,7 @@
             $("#perfil option[value=Bacteriologo]").attr("selected", true);
         }
 
-        
+
 
     });
 
@@ -156,9 +157,9 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="nombre">Nombres</label>
+                            <label class="col-md-4 control-label" for="nombres">Nombres</label>
                             <div class="col-md-4 input-group">
-                                <input id="nombre" name="nombre" placeholder="" class="form-control input-md"  required="" type="text" value="<%=nombre%>" >
+                                <input id="nombres" name="nombres" placeholder="" class="form-control input-md"  required="" type="text" value="<%=nombres%>" >
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
@@ -166,12 +167,21 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="apellidos">Apellidos</label>  
+                            <label class="col-md-4 control-label" for="apellido1">Primer Apellido</label>  
                             <div class="col-md-4 input-group">
-                                <input id="apellidos" name="apellidos" placeholder="" class="form-control input-md" required="" type="text" value="<%=apellidos%>" >
+                                <input id="apellidos" name="apellido1" placeholder="" class="form-control input-md" required="" type="text" value="<%=apellido1%>" >
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="apellido2">Segundo Apellido</label>  
+                            <div class="col-md-4 input-group">
+                                <input id="apellidos" name="apellido2" placeholder="" class="form-control input-md" required="" type="text" value="<%=apellido2%>" >
+                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                            </div>
+                        </div>        
 
                         <!-- Text input-->
                         <div class="form-group">
