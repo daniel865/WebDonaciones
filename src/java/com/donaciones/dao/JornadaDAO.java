@@ -6,7 +6,7 @@
 
 package com.donaciones.dao;
 
-import com.entities.Jornada;
+import com.donaciones.entities.Jornada;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

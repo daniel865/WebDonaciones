@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.entities;
-
+package com.donaciones.entities;
 /**
  *
  * @author Daniel

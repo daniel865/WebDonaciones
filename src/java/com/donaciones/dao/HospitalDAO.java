@@ -6,7 +6,7 @@
 
 package com.donaciones.dao;
 
-import com.entities.Hospital;
+import com.donaciones.entities.Hospital;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

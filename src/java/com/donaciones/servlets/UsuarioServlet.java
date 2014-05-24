@@ -6,7 +6,7 @@
 package com.donaciones.servlets;
 
 import com.donaciones.dao.Conexion;
-import com.entities.Usuario;
+import com.donaciones.entities.Usuario;
 import com.donaciones.dao.UsuarioDAO;
 
 import java.io.IOException;

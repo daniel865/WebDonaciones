@@ -6,7 +6,7 @@
 
 package com.donaciones.dao;
 
-import com.entities.Usuario;
+import com.donaciones.entities.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
