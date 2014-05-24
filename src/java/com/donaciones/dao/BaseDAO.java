@@ -19,7 +19,7 @@ public class BaseDAO {
 
     /**
      * Constructor que se encarga de iniciar la conexión a la base de datos.
-     * @param connectionManager
+     * @param connectionManager Manejador de la conexión de la base de datos.
      */
     public BaseDAO(Conexion connectionManager) {
         this.connectionManager = connectionManager;

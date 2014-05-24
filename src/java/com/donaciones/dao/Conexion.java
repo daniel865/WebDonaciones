@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.donaciones.dao;
 
 import java.sql.Connection;
@@ -14,7 +8,8 @@ import java.sql.DriverManager;
  * Clase para conectarse con la base de especificando usuario, contraseña y 
  * ubicación.
  * @author Daniel Rúa Madrid
- * @version 1.0, 23/05/2014
+ * @version 1.0 
+ * @since 23/05/2014
  */
 
 public class Conexion {
@@ -37,9 +32,9 @@ public class Conexion {
     }
     
     /**
-     *
+     * Crea la conexión a la base de datos
      * @return DriveManager encargado de obtener la conexión.
-     * @throws Exception
+     * @throws Exception Excepción al intentar conectar a la base de datos.
      */
     public Connection conectar()throws Exception{
         try {
@@ -51,9 +46,9 @@ public class Conexion {
     }
     
     /**
-     *
-     * @param connection
-     * @throws Exception
+     * Cierra la conexión a la base de datos.
+     * @param connection Conexión que se va a cerrar.
+     * @throws Exception Excepción al intentar cerrar la conexión.
      */
     public void cerrar(Connection connection)throws Exception{
         try {

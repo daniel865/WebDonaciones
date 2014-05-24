@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.donaciones.dao;
 
 import com.donaciones.entities.Bolsa;
@@ -17,6 +11,7 @@ import java.util.logging.Logger;
 /**
  * Clase para hacer el CRUD de bolsas de sangre dentro de la base de datos.
  * @author Daniel Rúa Madrid
+ * @version 1.0
  * @since 23/05/2014
  */
 public class BolsaDAO extends BaseDAO{
