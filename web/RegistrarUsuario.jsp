@@ -271,7 +271,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="form-group">
-                                        <label class="col-md-4 control-label" for="buscar">Nombre de Usuario</label>  
+                                        <label class="col-md-4 control-label" for="buscar">Número de Identificación</label>  
                                         <div class="col-md-4">
                                             <input id="buscar_usu" name="buscar_usu" placeholder="" class="form-control input-md"  type="text">
                                         </div>
