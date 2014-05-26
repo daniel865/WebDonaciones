@@ -76,16 +76,18 @@
         }
         $("#cod_jornada option[value=<%=cod_jornada%>]").attr("selected",true);
     });
-
-
-
-
-
         </script>
         <%}%>
 
     </head>
     <body>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#cod_jornada').load('CargarJornadasServlet');
+            });
+        </script>
+        
+        
         <div id="wrapper">
 
             <!-- Menu Horizontal -->

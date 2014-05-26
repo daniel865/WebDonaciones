@@ -38,8 +38,8 @@ public class UsuarioDAO extends BaseDAO{
         PreparedStatement ps = null;
         try {
             connection = connectionManager.conectar();
-            ps = connection.prepareStatement("INSERT INTO USUARIO(nroidentificacion_usu,nombres_usu,apellido1_usu,apellido2_usu,usuario_usu,"
-                    + "contrasenia_usu,perfil_usu,estado_usu) VALUES(?,?,?,?,?,?,?,?,?)");
+            ps = connection.prepareStatement("INSERT INTO USUARIO(nroidentificacion_usu, nombres_usu, apellido1_usu, apellido2_usu, usuario_usu, "
+                    + "correo_usu, contrasenia_usu, perfil_usu, estado_usu) VALUES(?,?,?,?,?,?,?,?,?)");
             ps.setString(1, usuario.getNro_Identificacion());
             ps.setString(2, usuario.getNombres());
             ps.setString(3, usuario.getApellido1());
@@ -110,15 +110,16 @@ public class UsuarioDAO extends BaseDAO{
         try {
             connection = connectionManager.conectar();
             ps = connection.prepareStatement("UPDATE USUARIO SET nombres_usu=?, apellido1_usu=?, apellido2_usu=?, "
-                    + "usuario_usu=?, contrasenia_usu=?, perfil_usu=?, estado_usu=? WHERE nroidentificacion_usu=?");
+                    + "usuario_usu=?, correo_usu=?, contrasenia_usu=?, perfil_usu=?, estado_usu=? WHERE nroidentificacion_usu=?");
             ps.setString(1, usuario.getNombres());
             ps.setString(2, usuario.getApellido1());
             ps.setString(3, usuario.getApellido2());
             ps.setString(4, usuario.getUsuario());
-            ps.setString(5, usuario.getPassword());
-            ps.setString(6, usuario.getPerfil());
-            ps.setString(7, usuario.getEstado());
-            ps.setString(8, usuario.getNro_Identificacion());
+            ps.setString(5, usuario.getCorreo());
+            ps.setString(6, usuario.getPassword());
+            ps.setString(7, usuario.getPerfil());
+            ps.setString(8, usuario.getEstado());
+            ps.setString(9, usuario.getNro_Identificacion());
             ps.execute();
         } catch (Exception e) {
             Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);

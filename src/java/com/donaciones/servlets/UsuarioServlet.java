@@ -40,7 +40,7 @@ public class UsuarioServlet extends HttpServlet {
         String accion = request.getParameter("accion");
 
         if (("Guardar").equals(accion)) {
-            UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("root", "", "jdbc:mysql://localhost/dbdonaciones"));
+            UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
             String nro_identificacion = request.getParameter("nro_identificacion");
             String nombres = request.getParameter("nombres");
             String apellido1 = request.getParameter("apellido1");
@@ -70,7 +70,7 @@ public class UsuarioServlet extends HttpServlet {
             request.getRequestDispatcher("RegistrarUsuario.jsp").forward(request, response);
         } else {
             if (("Consultar").equals(accion)) {
-                UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("root", "", "jdbc:mysql://localhost/dbdonaciones"));
+                UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
                 String user = request.getParameter("buscar_usu");
                 Usuario usuario;
                 try {
@@ -95,7 +95,7 @@ public class UsuarioServlet extends HttpServlet {
                 }
             } else {
                 if (("Consultar Usuario").equals(accion)) {
-                    UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("root", "", "jdbc:mysql://localhost/dbdonaciones"));
+                    UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
                     String user = request.getParameter("usuario2");
                     Usuario usuario;
                     try {
@@ -118,7 +118,7 @@ public class UsuarioServlet extends HttpServlet {
 
                 } else {
                     if (("Modificar").equals(accion)) {
-                        UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("root", "", "jdbc:mysql://localhost/dbdonaciones"));
+                        UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
                         String nro_identificacion = request.getParameter("nro_identificacion");
                         String nombres = request.getParameter("nombres");
                         String apellido1 = request.getParameter("apellido1");
@@ -147,7 +147,7 @@ public class UsuarioServlet extends HttpServlet {
                         request.getRequestDispatcher("RegistrarUsuario.jsp").forward(request, response);
                     } else {
                         if (("Ingresar").equals(accion)) {
-                            UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("root", "", "jdbc:mysql://localhost/dbdonaciones"));
+                            UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
                             String user = request.getParameter("user");
                             String pass = request.getParameter("pass");
                             Usuario usuario;

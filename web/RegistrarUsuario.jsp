@@ -4,7 +4,7 @@
     Author     : sala306
 --%>
 
-<%@page import="com.entities.Usuario" %>
+<%@page import="com.donaciones.entities.Usuario" %>
 <%@page import="java.util.List" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
