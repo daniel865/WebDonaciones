@@ -6,6 +6,8 @@
 
 package com.donaciones.servlets;
 
+import com.donaciones.dao.Conexion;
+import com.donaciones.dao.JornadaDAO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -32,9 +34,29 @@ public class JornadaServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        
-        
         String accion = request.getParameter("accion");
+        if ( ("Guardar").equals(accion) ){
+            JornadaDAO jornadaDAO = new JornadaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
+            String codigo = request.getParameter("codigo");
+            String descripcion = request.getParameter("descripcion");
+            String fecha_programada = request.getParameter("fecha_programada");
+            String hora = request.getParameter("hora");
+            String departamento = request.getParameter("departamento");
+            String municipio = request.getParameter("municipio");
+            String direccion = request.getParameter("direccion");
+            String donantes = request.getParameter("donantes");
+            String sangre_a1 = request.getParameter("sangre_a1");
+            String sangre_a2 = request.getParameter("sangre_a2");
+            String sangre_ab1 = request.getParameter("sangre_ab1");
+            String sangre_ab2 = request.getParameter("sangre_ab2");
+            String sangre_b1 = request.getParameter("sangre_b1");
+            String sangre_b2 = request.getParameter("sangre_b2");
+            String sangre_o1 = request.getParameter("sangre_o1");
+            String sangre_o2 = request.getParameter("sangre_o2");
+            String observaciones = request.getParameter("observaciones");
+            String estado = request.getParameter("estado");
+            
+        }
         
         
         
