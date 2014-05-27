@@ -41,9 +41,10 @@ public class JornadaDAO extends BaseDAO{
         PreparedStatement ps = null;
         try {
             connection = connectionManager.conectar();
-            ps = connection.prepareStatement("INSERT INTO JORNADA(codigo_jor=?, descripcion_jor=?, fecha_jor=?, departamento_jor=?,"
-                    + "municipio_jor=?, direccion_jor=?, cantidad_donantes_jor=?, cantidad_sangre_jor=?, estado_jor=?, observaciones_jor=?"
-                    + ") VALUES(?,?,?,?,?,?,?,?,?,?)");
+            ps = connection.prepareStatement("INSERT INTO JORNADA(codigo_jor, descripcion_jor, fecha_jor, departamento_jor, municipio_jor,"
+                    + "direccion_jor, cantidad_donantes_jor, sangre_a1_jor, sangre_a2_jor, sangre_ab1_jor, sangre_ab2_jor,  "
+                    + "sangre_b1_jor, sangre_b2_jor, sangre_o1_jor, sangre_o2_jor, estado_jor, observaciones_jor) "
+                    + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             ps.setString(1, jornada.getCodigo());
             ps.setString(2, jornada.getDescripcion());
             ps.setDate(3, jornada.getFecha());
@@ -51,10 +52,17 @@ public class JornadaDAO extends BaseDAO{
             ps.setString(5, jornada.getMunicipio());
             ps.setString(6, jornada.getDireccion());
             ps.setInt(7, jornada.getCant_donantes());
-            ps.setInt(8, jornada.getCant_sangre());
-            ps.setString(9, jornada.getEstado());
-            ps.setString(10, jornada.getObservaciones());
-            ps.execute();
+            ps.setInt(8, jornada.getSangre_a1());
+            ps.setInt(9, jornada.getSangre_a2());
+            ps.setInt(10, jornada.getSangre_ab1());
+            ps.setInt(11, jornada.getSangre_ab2());
+            ps.setInt(12, jornada.getSangre_b1());
+            ps.setInt(13, jornada.getSangre_b2());
+            ps.setInt(14, jornada.getSangre_o1());
+            ps.setInt(15, jornada.getSangre_o2());
+            ps.setString(16, jornada.getEstado());
+            ps.setString(17, jornada.getDescripcion());
+            ps.execute();           
         } catch (Exception e) {
             Logger.getLogger(JornadaDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new Exception("Error al crear jornada",e);
