@@ -73,9 +73,6 @@
         if (perfil === "Bacteriologo") {
             $("#perfil option[value=Bacteriologo]").attr("selected", true);
         }
-
-
-
     });
 
     //alert(estado);

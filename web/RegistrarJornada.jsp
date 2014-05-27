@@ -110,7 +110,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="codigo">Código</label>  
                             <div class="col-md-4 input-group">
-                                <input id="codigo" name="codigo" type="text" placeholder="" class="form-control input-md">
+                                <input id="codigo" name="codigo" type="text" placeholder="" class="form-control input-md" value="<%=codigo%>">
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="descripcion">Descripción</label>
                             <div class="col-md-4 input-group">                     
-                                <textarea class="form-control" id="descripcion" name="descripcion"></textarea>
+                                <textarea class="form-control" id="descripcion" name="descripcion"><%=descripcion%></textarea>
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
@@ -128,7 +128,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="fecha_programada">Fecha Programada</label>  
                             <div class="col-md-4 input-group">
-                                <input id="fecha_programada" name="fecha_programada" type="date" placeholder="" class="form-control input-md">
+                                <input id="fecha_programada" name="fecha_programada" type="date" placeholder="" class="form-control input-md" value="<%=fecha_programada%>">
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="hora">Hora</label>  
                             <div class="col-md-4 input-group">
-                                <input id="hora" name="hora" type="time" placeholder="" class="form-control input-md">
+                                <input id="hora" name="hora" type="time" placeholder="" class="form-control input-md" value="<%=hora%>">
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
