@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Clase para hacer el CRUD de los donantes en la bolsa de sangre.
+ * Clase para hacer el CRUD de los donantes.
  * @author Daniel Rúa Madrid
  * @version 1.0
  * @since 23/05/2014
@@ -25,9 +25,9 @@ public class DonanteDAO extends BaseDAO {
     }
     
     /**
-     * METODO PARA CREAR UN DONANTE
-     * @param donante
-     * @throws Exception
+     * Crea un donantes dentro de la base de datos
+     * @param donante Objeto de tipo donante con los datos del donante
+     * @throws Exception Error al intentar insertar el donante
      */
     public void crearDonante(Donante donante) throws Exception {
         Connection connection = null;
@@ -72,10 +72,10 @@ public class DonanteDAO extends BaseDAO {
     }
     
     /**
-     * METODO PARA BUSCAR DONANTE
-     * @param identificacion
-     * @return
-     * @throws Exception
+     * Busca un donante registrado dentro de la base de datos
+     * @param identificacion Número de identificación del donante a buscar
+     * @return Objeto de tipo donante con los datos del donante
+     * @throws Exception Excepción al intentar buscar el donante.
      */
     public Donante buscarDonante(String identificacion)throws Exception{
         Connection connection = null;
@@ -106,9 +106,9 @@ public class DonanteDAO extends BaseDAO {
     }
     
     /**
-     * METODO PARA MODIFICAR DONANTE
-     * @param donante
-     * @throws Exception
+     * Modifica los datos de un donante dentro de la base de datos
+     * @param donante Objeto de tipo donante con todos los datos del donante
+     * @throws Exception Excepción al intentar modificar el donante en la base de datos.
      */
     public void modificarDonante(Donante donante)throws Exception{
         Connection connection = null;

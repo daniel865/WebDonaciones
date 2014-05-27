@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.donaciones.dao;
 
 import com.donaciones.entities.Jornada;
@@ -18,23 +12,25 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author daniel
+ * Clase encargada de hacer el CRUD de las jornadas dentro de la base de datos.
+ * @author Daniel Rúa Madrid
+ * @version 1.0
+ * @since 20/05/2014
  */
 public class JornadaDAO extends BaseDAO{
 
     /**
-     *
-     * @param connectionManager
+     * Constructor para iniciar la conexión a la base de datos.
+     * @param connectionManager Manejador de la conexión a la base de datos
      */
     public JornadaDAO(Conexion connectionManager) {
         super(connectionManager);
     }
     
     /**
-     * METODO PARA CREAR LA JORNADA
-     * @param jornada
-     * @throws Exception
+     * Crea una jornada dentro de la base de datos
+     * @param jornada Objeto de tipo jornada con los datos de la jornada
+     * @throws Exception Excepción al intentar crear una jornada en la base de datos.
      */
     public void crearJornada(Jornada jornada)throws Exception{
         Connection connection = null;
@@ -79,10 +75,10 @@ public class JornadaDAO extends BaseDAO{
     }
     
     /**
-     * METODO PARA BUSCAR JORNADA
-     * @param codigo
-     * @return
-     * @throws Exception
+     * Busca una jornada dentro de la base de datos
+     * @param codigo Código de la jornada a buscar
+     * @return Objeto de tipo jornda con los datos de la jornada
+     * @throws Exception Excepción al intentar buscar la jornda
      */
     public Jornada buscarJornada(String codigo)throws Exception{
         Connection connection = null;
@@ -113,9 +109,9 @@ public class JornadaDAO extends BaseDAO{
     }
     
     /**
-     * METODO MODIFICAR JORNADA
-     * @param jornada
-     * @throws Exception
+     * Modifica una jornada dentro de la base de datos
+     * @param jornada Objeto de tipo jornada con los datos de la jornada
+     * @throws Exception Excepción al intentar modificar la jornada
      */
     public void modificarJornada(Jornada jornada)throws Exception{
         Connection connection = null;
@@ -159,6 +155,11 @@ public class JornadaDAO extends BaseDAO{
         }
     }
     
+    /**
+     * Lista todas las jornadas dentro de la base de datos
+     * @return List con todas las jornadas registradas
+     * @throws Exception Excepción al intentar listar las jornadas
+     */
     public List<Jornada> listarJornadas()throws Exception{
         Connection connection = null;
         PreparedStatement ps = null;

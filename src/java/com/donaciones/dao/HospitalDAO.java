@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.donaciones.dao;
 
 import com.donaciones.entities.Hospital;
@@ -15,23 +9,25 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author daniel
+ * Clase encargada de realizar el CRUD del hospital en la base de datos.
+ * @author Daniel Rúa Madrid
+ * @version 1.0
+ * @since 20/05/2014
  */
 public class HospitalDAO extends BaseDAO{
 
     /**
-     *
-     * @param connectionManager
+     * Constructor para iniciar la conexión a la base de datos.
+     * @param connectionManager Manejador de la conexión a la base de datos.
      */
     public HospitalDAO(Conexion connectionManager) {
         super(connectionManager);
     }
     
     /**
-     * METODO PARA CREAR HOSPITAL
-     * @param hospital
-     * @throws Exception
+     * Crea un Hospital dentro de la base de datos.
+     * @param hospital Objeto de tipo hospital con los datos del hospital.
+     * @throws Exception Excepción al intentar crear un hospital
      */
     public void crearHospital(Hospital hospital)throws Exception{
         Connection connection = null;
@@ -69,19 +65,19 @@ public class HospitalDAO extends BaseDAO{
     }
     
     /**
-     * METODO PARA BUSCAR HOSPITAL
-     * @param identificacion
-     * @return
-     * @throws Exception
+     * Busca un hospital dentro de la base de datos
+     * @param nit Nit del hospital que se quiere buscar
+     * @return Objeto de tipo hospital con todos los datos del hospital
+     * @throws Exception Excepción al intentar buscar el hospital
      */
-    public Hospital buscarHospital(String codigo)throws Exception{
+    public Hospital buscarHospital(String nit)throws Exception{
         Connection connection = null;
         PreparedStatement ps = null;
         ResultSet rs;
         try {
             connection = connectionManager.conectar();
             ps = connection.prepareStatement("SELECT * FROM HOSPITAL WHERE nit_hos=?");
-            ps.setString(1, codigo);
+            ps.setString(1, nit);
             rs = ps.executeQuery();
             while(rs.next()){
                 return new Hospital(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getLong(8), rs.getString(9), rs.getLong(10), rs.getString(11), rs.getString(12));  
@@ -103,9 +99,9 @@ public class HospitalDAO extends BaseDAO{
     }
     
     /**
-     * METODO PARA MODIFICAR HOSPITAL
-     * @param hospital
-     * @throws Exception
+     * Modifica un hospital dento de la base de datos
+     * @param hospital Objeto de tipo hospital con los datos del hospital
+     * @throws Exception Excepción al intentar modificar el hospital
      */
     public void modificarHospital(Hospital hospital)throws Exception{
         Connection connection = null;

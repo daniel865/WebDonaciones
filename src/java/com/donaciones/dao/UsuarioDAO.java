@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.donaciones.dao;
 
 import com.donaciones.entities.Usuario;
@@ -15,23 +9,25 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author Daniel
+ * Clase encargada de hacer el CRUD de los usuarios en la base de datos
+ * @author Daniel Rúa Madrid
+ * @version 1.0
+ * @since 20/05/2014
  */
 public class UsuarioDAO extends BaseDAO{
 
     /**
-     *
-     * @param connectionManager
+     * Constructor para iniciar la conexión a la base de datos.
+     * @param connectionManager Manejador de la conexión
      */
     public UsuarioDAO(Conexion connectionManager) {
         super(connectionManager);
     }
     
     /**
-     * METODO PARA CREAR UN USUSARIO
-     * @param usuario
-     * @throws Exception
+     * Crea un usuario dentro de la base de datos
+     * @param usuario Objeto de tipo usuario con los datos del usuario
+     * @throws Exception Excepción al intentar crear un usuario
      */
     public void crearUsuario(Usuario usuario)throws Exception{
         Connection  connection = null;
@@ -66,10 +62,10 @@ public class UsuarioDAO extends BaseDAO{
     }
     
     /**
-     * METODO PARA BUSCAR USUARIO
-     * @param identificacion
-     * @return
-     * @throws Exception
+     * Busca un usuario por su identificación
+     * @param identificacion Número de identificación del donante
+     * @return Objeto de tipo usuario con los datos del usuario
+     * @throws Exception Excepción al intentar buscar un usuario
      */
     public Usuario buscarUsuario(String identificacion)throws Exception{
         Connection connection = null;
@@ -100,9 +96,9 @@ public class UsuarioDAO extends BaseDAO{
     }
     
     /**
-     * METODO PARA MODIFICAR USUARIO
-     * @param usuario
-     * @throws Exception
+     * Modifica un usuario creado previamente
+     * @param usuario Objeto tipo de Usuario con los datos a modificar
+     * @throws Exception Excepción al intentar modificar el usuario
      */
     public void modificarUsuario(Usuario usuario)throws Exception{
         Connection connection = null;
@@ -136,6 +132,11 @@ public class UsuarioDAO extends BaseDAO{
         }
     }
     
+    /**
+     * Elimina un usario basado en su identificación
+     * @param identificacion Número de indentificación del usuario a eliminar.
+     * @throws Exception Excepción al intentar eliminar el usuario
+     */
     public void eliminarUsuario(String identificacion)throws Exception{
         Connection connection = null;
         PreparedStatement ps = null;
@@ -159,6 +160,14 @@ public class UsuarioDAO extends BaseDAO{
         }
     }
     
+    /**
+     * Autentica si un usuario está registrado, Devuelve un objeto de tipo Usuario
+     * si está registrado, sino devuelve null
+     * @param usuario Nombre de Usuario
+     * @param password Contraseña del Usuario
+     * @return Objeto de tipo Usuario con los datos del usuario
+     * @throws Exception Excepción al intentar autenticar el usuario
+     */
     public Usuario autenticar(String usuario,String password)throws Exception{
         Connection connection = null;
         PreparedStatement ps = null;
