@@ -94,7 +94,7 @@ public class JornadaDAO extends BaseDAO{
             ps.setString(1, codigo);
             rs = ps.executeQuery();
             while(rs.next()){
-                return new Jornada(rs.getString(1), rs.getString(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getString(10));
+                return new Jornada(rs.getString(1), rs.getString(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10), rs.getInt(11), rs.getInt(12), rs.getInt(13), rs.getInt(14), rs.getInt(15), rs.getString(16), rs.getString(17));
             }
         } catch (Exception e) {
             Logger.getLogger(JornadaDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -122,18 +122,27 @@ public class JornadaDAO extends BaseDAO{
         PreparedStatement ps = null;
         try {
             connection = connectionManager.conectar();
-            ps = connection.prepareStatement("UPDATE JORNADA SET descripcion_jor=?, fecha_jor=?, departamento_jor=?,municipio_jor=?, "
-                    + "direccion_jor=?, cantidad_donantes_jor=?, cantidad_sangre_jor=?, estado_jor=?, observaciones_jor=? WHERE codigo_jor=?");
+            ps = connection.prepareStatement("UPDATE JORNADA SET descripcion_jor=?, fecha_jor=?, departamento_jor=?, municipio_jor=?,"
+                    + "direccion_jor=?, cantidad_donantes_jor=?, sangre_a1_jor=?, sangre_a2_jor=?, sangre_ab1_jor=?, sangre_ab2_jor=?,"
+                    + "sangre_b1_jor=?, sangre_b2_jor=?, sangre_o1_jor=?, sangre_o2_jor=?, estado_jor=?, observaciones_jor=? "
+                    + "WHERE codigo_jor=?");
             ps.setString(1, jornada.getDescripcion());
             ps.setDate(2, jornada.getFecha());
             ps.setString(3, jornada.getDepartamento());
             ps.setString(4, jornada.getMunicipio());
             ps.setString(5, jornada.getDireccion());
             ps.setInt(6, jornada.getCant_donantes());
-            ps.setInt(7, jornada.getCant_sangre());
-            ps.setString(8, jornada.getEstado());
-            ps.setString(9, jornada.getObservaciones());
-            ps.setString(10, jornada.getCodigo());
+            ps.setInt(7, jornada.getSangre_a1());
+            ps.setInt(8, jornada.getSangre_a2());
+            ps.setInt(9, jornada.getSangre_ab1());
+            ps.setInt(10, jornada.getSangre_ab2());
+            ps.setInt(11, jornada.getSangre_b1());
+            ps.setInt(12, jornada.getSangre_b2());
+            ps.setInt(13, jornada.getSangre_o1());
+            ps.setInt(14, jornada.getSangre_o2());
+            ps.setString(15, jornada.getEstado());
+            ps.setString(16, jornada.getObservaciones());
+            ps.setString(17, jornada.getCodigo());
             ps.execute();
         } catch (Exception e) {
             Logger.getLogger(JornadaDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -160,7 +169,7 @@ public class JornadaDAO extends BaseDAO{
             ps = connection.prepareStatement("SELECT * FROM jornada");
             rs = ps.executeQuery();
             while (rs.next()) {                
-                listJornadas.add(new Jornada(rs.getString(1), rs.getString(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getString(9), rs.getString(10)));
+                listJornadas.add(new Jornada(rs.getString(1), rs.getString(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10), rs.getInt(11), rs.getInt(12), rs.getInt(13), rs.getInt(14), rs.getInt(15), rs.getString(16), rs.getString(17)));
             }
             return listJornadas;
         } catch (Exception e) {

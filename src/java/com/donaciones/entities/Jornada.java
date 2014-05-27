@@ -21,11 +21,18 @@ public class Jornada {
     private String municipio;
     private String direccion;
     private int cant_donantes;
-    private int cant_sangre;
+    private int sangre_a1;
+    private int sangre_a2;
+    private int sangre_ab1;
+    private int sangre_ab2;
+    private int sangre_b1;
+    private int sangre_b2;
+    private int sangre_o1;
+    private int sangre_o2;
     private String estado;
     private String observaciones;
 
-    public Jornada(String codigo, String descripcion, Date fecha, String departamento, String municipio, String direccion, int cant_donantes, int cant_sangre, String estado, String observaciones) {
+    public Jornada(String codigo, String descripcion, Date fecha, String departamento, String municipio, String direccion, int cant_donantes, int sangre_a1, int sangre_a2, int sangre_ab1, int sangre_ab2, int sangre_b1, int sangre_b2, int sangre_o1, int sangre_o2, String estado, String observaciones) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.fecha = fecha;
@@ -33,17 +40,80 @@ public class Jornada {
         this.municipio = municipio;
         this.direccion = direccion;
         this.cant_donantes = cant_donantes;
-        this.cant_sangre = cant_sangre;
+        this.sangre_a1 = sangre_a1;
+        this.sangre_a2 = sangre_a2;
+        this.sangre_ab1 = sangre_ab1;
+        this.sangre_ab2 = sangre_ab2;
+        this.sangre_b1 = sangre_b1;
+        this.sangre_b2 = sangre_b2;
+        this.sangre_o1 = sangre_o1;
+        this.sangre_o2 = sangre_o2;
         this.estado = estado;
         this.observaciones = observaciones;
     }
 
-    public String getObservaciones() {
-        return observaciones;
+    public int getSangre_a1() {
+        return sangre_a1;
     }
 
-    public void setObservaciones(String observaciones) {
-        this.observaciones = observaciones;
+    public void setSangre_a1(int sangre_a1) {
+        this.sangre_a1 = sangre_a1;
+    }
+
+    public int getSangre_a2() {
+        return sangre_a2;
+    }
+
+    public void setSangre_a2(int sangre_a2) {
+        this.sangre_a2 = sangre_a2;
+    }
+
+    public int getSangre_ab1() {
+        return sangre_ab1;
+    }
+
+    public void setSangre_ab1(int sangre_ab1) {
+        this.sangre_ab1 = sangre_ab1;
+    }
+
+    public int getSangre_ab2() {
+        return sangre_ab2;
+    }
+
+    public void setSangre_ab2(int sangre_ab2) {
+        this.sangre_ab2 = sangre_ab2;
+    }
+
+    public int getSangre_b1() {
+        return sangre_b1;
+    }
+
+    public void setSangre_b1(int sangre_b1) {
+        this.sangre_b1 = sangre_b1;
+    }
+
+    public int getSangre_b2() {
+        return sangre_b2;
+    }
+
+    public void setSangre_b2(int sangre_b2) {
+        this.sangre_b2 = sangre_b2;
+    }
+
+    public int getSangre_o1() {
+        return sangre_o1;
+    }
+
+    public void setSangre_o1(int sangre_o1) {
+        this.sangre_o1 = sangre_o1;
+    }
+
+    public int getSangre_o2() {
+        return sangre_o2;
+    }
+
+    public void setSangre_o2(int sangre_o2) {
+        this.sangre_o2 = sangre_o2;
     }
 
     public String getCodigo() {
@@ -102,14 +172,6 @@ public class Jornada {
         this.cant_donantes = cant_donantes;
     }
 
-    public int getCant_sangre() {
-        return cant_sangre;
-    }
-
-    public void setCant_sangre(int cant_sangre) {
-        this.cant_sangre = cant_sangre;
-    }
-
     public String getEstado() {
         return estado;
     }
@@ -117,8 +179,15 @@ public class Jornada {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    
-    
 
+    public String getObservaciones() {
+        return observaciones;
+    }
+
+    public void setObservaciones(String observaciones) {
+        this.observaciones = observaciones;
+    }
+
+    
     
 }

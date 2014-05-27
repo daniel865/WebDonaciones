@@ -8,7 +8,9 @@ package com.donaciones.servlets;
 
 import com.donaciones.dao.Conexion;
 import com.donaciones.dao.JornadaDAO;
+import com.donaciones.entities.Jornada;
 import java.io.IOException;
+import java.sql.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -55,6 +57,11 @@ public class JornadaServlet extends HttpServlet {
             String sangre_o2 = request.getParameter("sangre_o2");
             String observaciones = request.getParameter("observaciones");
             String estado = request.getParameter("estado");
+            try {
+                
+            } catch (Exception e) {
+            
+            }
             
         }
         
