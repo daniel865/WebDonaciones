@@ -6,6 +6,31 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+    String mensaje = request.getAttribute("mensaje") != null ? (String) request.getAttribute("mensaje") : null;
+    String codigo = request.getAttribute("codigo") !=null ? (String) request.getAttribute("codigo") : "";
+    String descripcion = request.getAttribute("descripcion") !=null ? (String) request.getAttribute("descripcion") : "";
+    String fecha_programada = request.getAttribute("fecha_programada") != null ? (String) request.getAttribute("fecha_programada") : "";
+    String hora = request.getAttribute("hora") != null ? (String) request.getAttribute("hora") : "";
+    String departamento = request.getAttribute("departamento") != null ? (String) request.getAttribute("departamento") : "";
+    String municipio = request.getAttribute("municipio") != null ? (String) request.getAttribute("municipio") : "";
+    String direccion = request.getAttribute("direccion") != null ? (String) request.getAttribute("direccion") : "";
+    String donantes = request.getAttribute("donantes") != null ? (String) request.getAttribute("donantes") : "";
+    String sangre_a1 = request.getAttribute("sangre_a1") != null ? (String) request.getAttribute("sangre_a1") : "";
+    String sangre_a2 = request.getAttribute("sangre_a2") != null ? (String) request.getAttribute("sangre_a2") : "";
+    String sangre_ab1 = request.getAttribute("sangre_ab1") != null ? (String) request.getAttribute("sangre_ab1") : "";
+    String sangre_ab2 = request.getAttribute("sangre_ab2") != null ? (String) request.getAttribute("sangre_ab2") : "";
+    String sangre_b1 = request.getAttribute("sangre_b1") != null ? (String) request.getAttribute("sangre_b1") : "";
+    String sangre_b2 = request.getAttribute("sangre_b2") != null ? (String) request.getAttribute("sangre_b2") : "";
+    String sangre_o1 = request.getAttribute("sangre_o1") != null ? (String) request.getAttribute("sangre_o1") : "";
+    String sangre_o2 = request.getAttribute("sangre_o2") != null ? (String) request.getAttribute("sangre_o2") : "";
+    String observaciones = request.getAttribute("observaciones") != null ? (String) request.getAttribute("observaciones") : "";
+    String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
+    
+%>
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
