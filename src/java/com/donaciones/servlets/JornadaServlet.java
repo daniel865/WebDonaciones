@@ -42,6 +42,7 @@ public class JornadaServlet extends HttpServlet {
             String codigo = request.getParameter("codigo");
             String descripcion = request.getParameter("descripcion");
             String fecha_programada = request.getParameter("fecha_programada");
+            
             String hora = request.getParameter("hora");
             String departamento = request.getParameter("departamento");
             String municipio = request.getParameter("municipio");
