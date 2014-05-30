@@ -48,7 +48,7 @@ public class HospitalDAO extends BaseDAO{
             ps.setString(9, hospital.getNombre_representante());
             ps.setLong(10, hospital.getTelefono_representante());
             ps.setString(11, hospital.getCorreo_representante());
-            ps.setString(12, hospital.getEstado_representante());
+            ps.setString(12, hospital.getEstado());
         } catch (Exception e) {
             Logger.getLogger(HospitalDAO.class.getName()).log(Level.SEVERE, null, e);
             throw new Exception("Error al crear hospital",e);
@@ -120,7 +120,7 @@ public class HospitalDAO extends BaseDAO{
             ps.setString(8, hospital.getNombre_representante());
             ps.setLong(9, hospital.getTelefono_representante());
             ps.setString(10, hospital.getCorreo_representante());
-            ps.setString(11, hospital.getEstado_representante());
+            ps.setString(11, hospital.getEstado());
             ps.setString(12, hospital.getNit());
             ps.execute();
         } catch (Exception e) {
