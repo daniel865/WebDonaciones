@@ -100,13 +100,32 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="nombre">Nombre Completo</label>  
+                            <label class="col-md-4 control-label" for="nombres">Nombres</label>  
                             <div class="col-md-4 input-group">
-                                <input id="nombre" name="nombre" type="text" placeholder="" class="form-control input-md" required="">
+                                <input id="nombres" name="nombres" type="text" placeholder="" class="form-control input-md" required="">
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="primer_apellido">Primer Apellido</label>  
+                            <div class="col-md-4 input-group">
+                                <input id="primer_apellido" name="primer_apellido" type="text" placeholder="" class="form-control input-md" required="">
+                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                            </div>
+                        </div>
+                        
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="segundo_apellido">Segundo Apellido</label>  
+                            <div class="col-md-4 input-group">
+                                <input id="segundo_apellido" name="segundo_apellido" type="text" placeholder="" class="form-control input-md" required="">
+                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                            </div>
+                        </div>
+                        
+                        
                         <!-- Text input-->
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="telefono">Teléfono </label>  
@@ -139,9 +158,9 @@
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="ciudad">Ciudad</label>
+                            <label class="col-md-4 control-label" for="municipio">Ciudad</label>
                             <div class="col-md-4 input-group">
-                                <select id="ciudad" name="ciudad" class="form-control input-md">
+                                <select id="municipio" name="municipio" class="form-control input-md">
                                     <option value="1">Medellín</option>
                                     <option value="2">Itaguí</option>
                                 </select>
@@ -247,12 +266,14 @@
                             </div>
                         </div>
 
+                        
                         <!-- Groups Buttons -->
                         <div class="btn-group col-lg-offset-4 col-lg-4">
-                            <input type="button" class="btn btn-default" id="registrar" name="accion" value="Registrar" />
-                            <button type="button" class="btn btn-default">Buscar</button>
-                            <button type="button" class="btn btn-default">Modificar</button>
-                            <button type="button" class="btn btn-default">Eliminar</button> 
+                            <!--<button type="button" class="btn btn-default" name="btnnuevo" id="btnnuevo">Nuevo</button>-->
+                            <input type="submit" class="btn btn-default" name="accion" value="Guardar" id="btnguardar" />
+                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#ModalBuscar" name="btnbuscar" id="btnbuscar">Consultar</button>
+                            <input type="submit" class="btn btn-default" name="accion" value="Modificar" id="btnmodificar" /> 
+                            <button type="button" class="btn btn-default" name="btneliminar" id="btneliminar">Eliminar</button> 
                         </div>
 
                     </fieldset>

@@ -252,8 +252,8 @@
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#ModalBuscar" name="btnbuscar" id="btnbuscar">Consultar</button>
                             <input type="submit" class="btn btn-default" name="accion" value="Modificar" id="btnmodificar" /> 
                             <button type="button" class="btn btn-default" name="btneliminar" id="btneliminar">Eliminar</button> 
-
                         </div>
+                        
                     </fieldset>
                 </form>
 
