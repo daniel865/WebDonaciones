@@ -115,7 +115,7 @@
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
-                        
+
                         <!-- Text input-->
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="segundo_apellido">Segundo Apellido</label>  
@@ -124,8 +124,8 @@
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
-                        
-                        
+
+
                         <!-- Text input-->
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="telefono">Teléfono </label>  
@@ -266,7 +266,7 @@
                             </div>
                         </div>
 
-                        
+
                         <!-- Groups Buttons -->
                         <div class="btn-group col-lg-offset-4 col-lg-4">
                             <!--<button type="button" class="btn btn-default" name="btnnuevo" id="btnnuevo">Nuevo</button>-->
@@ -278,6 +278,36 @@
 
                     </fieldset>
                 </form>
+
+                <!-- Modal Buscar-->
+                <form class="form-horizontal" action="UsuarioServlet" method="POST" >
+                    <div class="modal fade" id="ModalBuscar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Buscar Donante</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="buscar">Número de Identificación</label>  
+                                        <div class="col-md-4">
+                                            <input id="buscar_don" name="buscar_don" placeholder="" class="form-control input-md"  type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <input type="submit" value="Consultar" class="btn btn-primary" name="accion" id="btnbuscarb">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+
+
             </div>    
 
         </div>

@@ -71,6 +71,8 @@ public class Donante {
         this.estado = estado;
     }
 
+  
+
     
     /**
      * Retorna el estado del donante
