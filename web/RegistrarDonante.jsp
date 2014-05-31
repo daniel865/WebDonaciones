@@ -227,10 +227,10 @@
                             <label class="col-md-4 control-label" for="habitos">Hábitos</label>
                             <div class="col-md-4 input-group">
                                 <select id="habitos" name="habitos" class="form-control input-md">
-                                    <option>Ninguno</option>
-                                    <option value="1">Fumar</option>
-                                    <option value="2">Drogas</option>
-                                    <option value="">Alcohol</option>
+                                    <option value="1">Ninguno</option>
+                                    <option value="2">Fumar</option>
+                                    <option value="3">Drogas</option>
+                                    <option value="4">Alcohol</option>
                                 </select>
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>

@@ -8,6 +8,7 @@ package com.donaciones.servlets;
 
 import com.donaciones.dao.Conexion;
 import com.donaciones.dao.DonanteDAO;
+import com.donaciones.entities.Donante;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -51,6 +52,18 @@ public class DonanteServlet extends HttpServlet {
             String municipio = request.getParameter("municipio");
             String genero = request.getParameter("genero");
             String correo = request.getParameter("correo");
+            String fecha_nacimiento = request.getParameter("fecha_nacimiento");
+            String fec_ultdonacion = request.getParameter("fec_ultdonacion");
+            String enfermedades = request.getParameter("enfermedades");
+            String habitos = request.getParameter("habitos");
+            String nom_responsable = request.getParameter("nom_responsable");
+            String tel_responsable = request.getParameter("tel_responsable");
+            String estado = request.getParameter("estado");
+            try {
+                
+            } catch (Exception e) {
+            }
+            
             
         }
         

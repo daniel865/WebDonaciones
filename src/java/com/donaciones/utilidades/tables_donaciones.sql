@@ -27,8 +27,8 @@ habitos_don  varchar(80),
 nom_res_don varchar(50),
 tel_res_don long,
 genero_don varchar(10),
-departamento_don varchar(15),
-municipio_don varchar(15),
+departamento_don varchar(2),
+municipio_don varchar(4),
 estado_don varchar(10)
 );
 
