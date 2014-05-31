@@ -6,6 +6,31 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<%
+    String mensaje = request.getAttribute("mensaje") != null ? (String) request.getAttribute("mensaje") : null;
+    String tipo_doc = request.getAttribute("tipo_doc") != null ? (String) request.getAttribute("tipo_doc") : "";
+    String nro_doc = request.getAttribute("nro_doc") != null ? (String) request.getAttribute("nro_doc") : "";
+    String nombres = request.getAttribute("nombres") != null ? (String) request.getAttribute("nombres") : "";
+    String primer_apellido = request.getAttribute("primer_apellido") != null ? (String) request.getAttribute("primer_apellido") : "";
+    String segundo_apellido = request.getAttribute("segundo_apellido") !=null ? (String) request.getAttribute("segundo_apellido") : "";
+    String telefono = request.getAttribute("telefono") != null ? (String) request.getAttribute("telefono") : "";
+    String direccion = request.getAttribute("direccion") !=null ? (String) request.getAttribute("direccion") : "";
+    String departamento = request.getAttribute("departamento") != null ? (String) request.getAttribute("departamento") : "";
+    String municipio = request.getAttribute("municipio") != null ? (String) request.getAttribute("municipio") : "";
+    String genero = request.getAttribute("genero") != null ? (String) request.getAttribute("genero") : "";
+    String correo = request.getAttribute("correo") != null ? (String) request.getAttribute("correo") : "";
+    String fecha_nacimiento = request.getAttribute("fecha_nacimiento") != null ? (String) request.getAttribute("fecha_nacimiento") : "";
+    String fec_ultdonacion = request.getAttribute("fec_ultdonacion") != null ? (String) request.getAttribute("fec_ultdonacion") : "";
+    String enfermedades = request.getAttribute("enfermedades") != null ? (String) request.getAttribute("enfermedades") : "";
+    String habitos = request.getAttribute("habitos") != null ? (String) request.getAttribute("habitos") : "";
+    String nom_responsable = request.getAttribute("nom_responsable") != null ? (String) request.getAttribute("nom_responsable") : "";
+    String tel_responsable = request.getAttribute("tel_responsable") != null ? (String) request.getAttribute("tel_responsable") : "";
+    String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
+%>
+
+
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
