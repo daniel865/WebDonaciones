@@ -9,10 +9,9 @@
 
 <%
     String mensaje = request.getAttribute("mensaje") != null ? (String) request.getAttribute("mensaje") : null;
-    String codigo = request.getAttribute("codigo") !=null ? (String) request.getAttribute("codigo") : "";
-    String descripcion = request.getAttribute("descripcion") !=null ? (String) request.getAttribute("descripcion") : "";
+    String codigo = request.getAttribute("codigo") != null ? (String) request.getAttribute("codigo") : "";
+    String descripcion = request.getAttribute("descripcion") != null ? (String) request.getAttribute("descripcion") : "";
     String fecha_programada = request.getAttribute("fecha_programada") != null ? (String) request.getAttribute("fecha_programada") : "";
-    String hora = request.getAttribute("hora") != null ? (String) request.getAttribute("hora") : "";
     String departamento = request.getAttribute("departamento") != null ? (String) request.getAttribute("departamento") : "";
     String municipio = request.getAttribute("municipio") != null ? (String) request.getAttribute("municipio") : "";
     String direccion = request.getAttribute("direccion") != null ? (String) request.getAttribute("direccion") : "";
@@ -27,7 +26,7 @@
     String sangre_o2 = request.getAttribute("sangre_o2") != null ? (String) request.getAttribute("sangre_o2") : "";
     String observaciones = request.getAttribute("observaciones") != null ? (String) request.getAttribute("observaciones") : "";
     String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
-    
+
 %>
 
 
@@ -43,7 +42,7 @@
         <script type="text/javascript" src="js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
         <script type="text/javascript">
-            
+
         </script>
     </head>
     <body>
@@ -129,15 +128,6 @@
                             <label class="col-md-4 control-label" for="fecha_programada">Fecha Programada</label>  
                             <div class="col-md-4 input-group">
                                 <input id="fecha_programada" name="fecha_programada" type="date" placeholder="" class="form-control input-md" value="<%=fecha_programada%>">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
-                            </div>
-                        </div>
-
-                        <!-- Text input-->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="hora">Hora</label>  
-                            <div class="col-md-4 input-group">
-                                <input id="hora" name="hora" type="time" placeholder="" class="form-control input-md" value="<%=hora%>">
                                 <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
@@ -276,7 +266,31 @@
                     </fieldset>
                 </form>
 
-
+                <!-- Modal Buscar-->
+                <form class="form-horizontal" action="UsuarioServlet" method="POST" >
+                    <div class="modal fade" id="ModalBuscar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Buscar Jornada</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="buscar">Código de la Jornada</label>  
+                                        <div class="col-md-4">
+                                            <input id="buscar_jor" name="buscar_jor" placeholder="" class="form-control input-md"  type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <input type="submit" value="Consultar" class="btn btn-primary" name="accion" id="btnbuscarb">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>               
 
 
 
