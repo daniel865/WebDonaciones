@@ -40,8 +40,13 @@ public class JornadaServlet extends HttpServlet {
         response.setContentType("text/html");
 
         String accion = request.getParameter("accion");
+        accion = accion==null ? "Inicio" : accion;
+        
+        boolean load = false;
+        
+        obtenerDepartamentos(request, response);
 
-        if ("Guardar".equals(accion)) {
+        if ( "Guardar".equals(accion)) {
             JornadaDAO jornadaDAO = new JornadaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String codigo = request.getParameter("codigo");
@@ -265,4 +270,10 @@ public class JornadaServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    public void obtenerDepartamentos(HttpServletRequest request, HttpServletResponse servletResponse){
+        
+    }
+    
+    
+    
 }

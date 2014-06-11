@@ -4,6 +4,9 @@
     Author     : daniel
 --%>
 
+<%@page import="com.donaciones.entities.Municipio"%>
+<%@page import="com.donaciones.entities.Departamento"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -26,7 +29,9 @@
     String sangre_o2 = request.getAttribute("sangre_o2") != null ? (String) request.getAttribute("sangre_o2") : "";
     String observaciones = request.getAttribute("observaciones") != null ? (String) request.getAttribute("observaciones") : "";
     String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
-
+    List<Departamento> listDepartamentos = request.getAttribute("listDepartamentos") != null ? (List<Departamento>) request.getAttribute("listDepartamentos"):null;
+    List<Municipio> listMunicipios = request.getAttribute("listMunicipios") != null ? (List<Municipio>) request.getAttribute("listMunicipios"):null;
+    boolean load = (Boolean)request.getAttribute("load") != null ? (Boolean) request.getAttribute("load") : false;
 %>
 
 
