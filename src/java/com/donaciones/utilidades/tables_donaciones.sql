@@ -18,7 +18,7 @@ nombres_don varchar(50),
 apellido1_don varchar(20),
 apellido2_don varchar(20),
 telefono_don long,
-direccion_don varchar(20),
+direccion_don varchar(50),
 correo_don varchar(30),
 fec_nac_don date,
 fec_doc_don date,
@@ -27,8 +27,8 @@ habitos_don  varchar(80),
 nom_res_don varchar(50),
 tel_res_don long,
 genero_don varchar(10),
-departamento_don varchar(2),
-municipio_don varchar(4),
+departamento_don int,
+municipio_don int,
 estado_don varchar(10)
 );
 
@@ -38,9 +38,9 @@ nit_hos varchar(10),
 tipo_hos varchar(10),
 razon_social_hos varchar(50),
 nivel_hos varchar(10),
-departamento_hos varchar(15),
-municipio_hos varchar(15),
-direccion_hos varchar(20),
+departamento_hos int,
+municipio_hos int,
+direccion_hos varchar(50),
 telefono_hos long,
 nombre_rep_hos  varchar(30),
 tel_rep_hos long,
@@ -53,8 +53,8 @@ CREATE TABLE JORNADA(
 codigo_jor varchar(10),
 descripcion_jor varchar(200),
 fecha_jor date,
-departamento_jor varchar(15),
-municipio_jor varchar(15),
+departamento_jor int,
+municipio_jor int,
 direccion_jor varchar(20),
 cantidad_donantes_jor int,
 sangre_a1_jor int,
@@ -83,13 +83,13 @@ observaciones_bol varchar(200)
 );
 
 CREATE TABLE DEPARTAMENTO (
-id_dep varchar(2),
+id_dep int,
 nombre_dep varchar(30)
 );
 
 CREATE TABLE MUNICIPIO(
-id_mun varchar(4),
+id_mun int,
 nombre_mun varchar(30),
-departamento_id varchar(5)
+departamento_id int
 );
 

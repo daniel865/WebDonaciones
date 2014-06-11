@@ -8,6 +8,7 @@ import com.donaciones.entities.Jornada;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -274,7 +275,7 @@ public class JornadaServlet extends HttpServlet {
         List<Departamento> listDepartamentos = null;
         try {
             listDepartamentos = departamentoDAO.getDepartamentos();
-            System.out.println(""+listDepartamentos.toString());
+            System.out.println(""+listDepartamentos.toString());   
             request.setAttribute("listDepartamentos", listDepartamentos);
             request.setAttribute("load", true);
         } catch (Exception e) {
