@@ -29,9 +29,12 @@
     String sangre_o2 = request.getAttribute("sangre_o2") != null ? (String) request.getAttribute("sangre_o2") : "";
     String observaciones = request.getAttribute("observaciones") != null ? (String) request.getAttribute("observaciones") : "";
     String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
-    List<Departamento> listDepartamentos = request.getAttribute("listDepartamentos") != null ? (List<Departamento>) request.getAttribute("listDepartamentos"):null;
-    List<Municipio> listMunicipios = request.getAttribute("listMunicipios") != null ? (List<Municipio>) request.getAttribute("listMunicipios"):null;
-    boolean load = (Boolean)request.getAttribute("load") != null ? (Boolean) request.getAttribute("load") : false;
+    List<Departamento> listDepartamentos = request.getAttribute("listDepartamentos") != null ? (List<Departamento>) request.getAttribute("listDepartamentos") : null;
+    List<Municipio> listMunicipios = request.getAttribute("listMunicipios") != null ? (List<Municipio>) request.getAttribute("listMunicipios") : null;
+    boolean load = (Boolean) request.getAttribute("load") != null ? (Boolean) request.getAttribute("load") : false;
+    String cargoDepartamentos;
+    String cargoMunicipios;
+    
 %>
 
 
@@ -74,10 +77,10 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-save"></i> Gestionar <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="RegistrarUsuario.jsp">Gestionar Usuario</a></li>
-                                <li><a href="RegistrarDonante.jsp">Gestionar Donante</a></li>
+                                <li><a href="DonanteServlet.jsp">Gestionar Donante</a></li>
                                 <li><a href="RegistrarBolsas.jsp">Gestionar Bolsa de Sangre</a></li>
-                                <li><a href="RegistrarHospital.jsp">Gestionar Hospital</a></li>
-                                <li><a href="RegistrarJornada.jsp">Gestionar Jornada de Donación</a></li>
+                                <li><a href="HospitalServlet">Gestionar Hospital</a></li>
+                                <li><a href="JornadaServlet">Gestionar Jornada de Donación</a></li>
                             </ul>                      
                         </li>
                         <li class="dropdown">
@@ -142,9 +145,14 @@
                             <label class="col-md-4 control-label" for="departamento">Departamento</label>
                             <div class="col-md-4 input-group">
                                 <select id="departamento" name="departamento" class="form-control">
-                                    <option value="Antioquia">Antioquia</option>
+                                    <option>Seleccione un Departamento</option>
+                                    <%
+                                        for (int index = 0; listDepartamentos != null && index < listDepartamentos.size(); index++) {
+                                            Departamento departamento1 = listDepartamentos.get(index);
+                                    %>
+                                    <option value="<%=departamento1.getId()%>"><%=departamento1.getNombre()%></option>
+                                    <%}%>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
@@ -153,9 +161,16 @@
                             <label class="col-md-4 control-label" for="municipio">Municipio</label>
                             <div class="col-md-4 input-group">
                                 <select id="municipio" name="municipio" class="form-control">
-                                    <option value="Medellín">Medellín</option>
+                                    <option>Seleccione un Municipio</option>
+                                    <%
+                                        for (int index = 0; listMunicipios != null && index < listMunicipios.size(); index++) {
+                                            Municipio municipio1 = listMunicipios.get(index);
+
+                                    %>
+                                    <option value="<%=municipio1.getId()%>"><%=municipio1.getNombre()%></option>
+                                    <%}%>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+
                             </div>
                         </div>
 
@@ -269,6 +284,10 @@
                         </div>
 
                     </fieldset>
+                                
+                    <input type="hidden" name="cargoDepartamentos" id="cargoDepartamentos" />
+                    <input type="hidden" name="cargoMunicipios" id="cargoMunicipios" />
+                    
                 </form>
 
                 <!-- Modal Buscar-->

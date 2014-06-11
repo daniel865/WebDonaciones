@@ -149,10 +149,10 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-save"></i> Gestionar <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="RegistrarUsuario.jsp">Gestionar Usuario</a></li>
-                                <li><a href="RegistrarDonante.jsp">Gestionar Donante</a></li>
+                                <li><a href="DonanteServlet.jsp">Gestionar Donante</a></li>
                                 <li><a href="RegistrarBolsas.jsp">Gestionar Bolsa de Sangre</a></li>
-                                <li><a href="RegistrarHospital.jsp">Gestionar Hospital</a></li>
-                                <li><a href="RegistrarJornada.jsp">Gestionar Jornada de Donación</a></li>
+                                <li><a href="HospitalServlet">Gestionar Hospital</a></li>
+                                <li><a href="JornadaServlet">Gestionar Jornada de Donación</a></li>
                             </ul>                      
                         </li>
                         <li class="dropdown">
