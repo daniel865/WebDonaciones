@@ -1,11 +1,14 @@
 package com.donaciones.servlets;
 
 import com.donaciones.dao.Conexion;
+import com.donaciones.dao.DepartamentoDAO;
 import com.donaciones.dao.JornadaDAO;
+import com.donaciones.entities.Departamento;
 import com.donaciones.entities.Jornada;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -266,6 +269,17 @@ public class JornadaServlet extends HttpServlet {
     }// </editor-fold>
 
     public void obtenerDepartamentos(HttpServletRequest request, HttpServletResponse servletResponse){
+        System.out.println("Entro Obtener Departamentos");
+        DepartamentoDAO departamentoDAO = new DepartamentoDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
+        List<Departamento> listDepartamentos = null;
+        try {
+            listDepartamentos = departamentoDAO.getDepartamentos();
+            System.out.println(""+listDepartamentos.toString());
+            request.setAttribute("listDepartamentos", listDepartamentos);
+            request.setAttribute("load", true);
+        } catch (Exception e) {
+            Logger.getLogger(JornadaServlet.class.getName()).log(Level.SEVERE, null, e);
+        }
         
     }
     
