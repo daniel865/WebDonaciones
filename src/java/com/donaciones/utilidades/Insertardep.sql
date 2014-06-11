@@ -1,4 +1,4 @@
-﻿INSERT INTO DEPARTAMENTO (id_dep, nombre_dep) VALUES (“1”, “AMAZONAS”);
+INSERT INTO DEPARTAMENTO (id_dep, nombre_dep) VALUES (“1”, “AMAZONAS”);
 INSERT INTO DEPARTAMENTO (id_dep, nombre_dep) VALUES (“2”, “ANTIOQUIA”);
 INSERT INTO DEPARTAMENTO (id_dep, nombre_dep) VALUES (“3”, “ARAUCA”);
 INSERT INTO DEPARTAMENTO (id_dep, nombre_dep) VALUES (“4”, “ATLÁNTICO”);

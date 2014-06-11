@@ -89,7 +89,7 @@ nombre_dep varchar(30)
 
 CREATE TABLE MUNICIPIO(
 id_mun varchar(4),
-departamento_mun varchar(5),
-nombre_mun varchar(30)
+nombre_mun varchar(30),
+departamento_id varchar(5)
 );
 

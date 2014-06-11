@@ -1,4 +1,4 @@
-﻿INSERT INTO municipio (id_mun, nombre_mun, departamento_id) VALUES ("1", "EL ENCANTO", "1"); 
+INSERT INTO municipio (id_mun, nombre_mun, departamento_id) VALUES ("1", "EL ENCANTO", "1"); 
 INSERT INTO municipio (id_mun, nombre_mun, departamento_id) VALUES ("2", "LA CHORRERA", "1"); 
 INSERT INTO municipio (id_mun, nombre_mun, departamento_id) VALUES ("3", "LA PEDRERA", "1"); 
 INSERT INTO municipio (id_mun, nombre_mun, departamento_id) VALUES ("4", "LA VICTORIA", "1"); 
