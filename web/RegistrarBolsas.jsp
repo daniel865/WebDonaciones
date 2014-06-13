@@ -4,6 +4,9 @@
     Author     : daniel
 --%>
 
+<%@page import="com.donaciones.entities.Jornada"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
@@ -18,7 +21,8 @@
     String cod_jornada = request.getAttribute("cod_jornada") != null ? (String) request.getAttribute("cod_jornada") : "";
     String buscar_cod = request.getAttribute("buscar_cod") != null ? (String) request.getAttribute("buscar_cod") : "";
     String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
-
+    boolean load = (Boolean)request.getAttribute("load") != null ? (Boolean) request.getAttribute("load") : false;
+    List<Jornada> listJornada = (List<Jornada>) request.getAttribute("listJornada") != null ? (List<Jornada>) request.getAttribute("listJornada") : null;
 %>
 
 <%if (mensaje != null) {%>
@@ -160,8 +164,13 @@
                             <label class="col-md-4 control-label" for="cod_jornada">Código Jornada</label>
                             <div class="col-md-4 input-group">
                                 <select id="cod_jornada" name="cod_jornada" class="form-control">
-                                    <option value=""></option>
-                                    <option value="2510">2510</option>
+                                    <option value="">Selecione una Jornada</option>
+                                    <%
+                                        for ( int index=0; listJornada!=null && index<listJornada.size(); index++ ){
+                                            Jornada jornada = listJornada.get(index);
+                                    %>
+                                    <option value="<%=jornada.getCodigo()%>"> <%= jornada.getDescripcion() %> </option>
+                                    <%}%>
                                 </select>
                                 
                             </div>
@@ -271,7 +280,7 @@
                                     <div class="form-group">
                                         <label class="col-md-4 control-label" for="buscar">Código de Bolsa</label>  
                                         <div class="col-md-4">
-                                            <input id="buscar_usu" name="buscar_cod" placeholder="" class="form-control input-md"  type="text">
+                                            <input id="buscar_bol" name="buscar_bol" placeholder="" class="form-control input-md"  type="text">
                                         </div>
                                     </div>
                                 </div>

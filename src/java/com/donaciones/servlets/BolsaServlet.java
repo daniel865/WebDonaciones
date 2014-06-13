@@ -8,11 +8,13 @@ package com.donaciones.servlets;
 
 import com.donaciones.dao.BolsaDAO;
 import com.donaciones.dao.Conexion;
+import com.donaciones.dao.JornadaDAO;
 import com.donaciones.entities.Bolsa;
+import com.donaciones.entities.Jornada;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -44,6 +46,7 @@ public class BolsaServlet extends HttpServlet {
         String accion = request.getParameter("accion");
         accion = accion == null ? "Inicio" : accion;
         
+        boolean load = false;
         
         if ( "Inicio".equals(accion) ){
             request.getRequestDispatcher("RegistrarBolsas.jsp").forward(request, response);
@@ -81,7 +84,8 @@ public class BolsaServlet extends HttpServlet {
             }
             request.getRequestDispatcher("RegistrarBolsas.jsp").forward(request, response);
         }else if ( "Consultar".equals(accion) ){
-            
+            BolsaDAO bolsaDAO = new BolsaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));  
+            String cog = request.getParameter("buscar_bol");
         } else if ( "Modificar".equals(accion) ){
             
         }
@@ -130,7 +134,15 @@ public class BolsaServlet extends HttpServlet {
     }// </editor-fold>
 
     public void obtenerJornadas(HttpServletRequest request,HttpServletResponse response){
-        
+        JornadaDAO jornadaDAO = new JornadaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
+        List<Jornada> listJornada;
+        try {
+            listJornada = jornadaDAO.listarJornadas();
+            request.setAttribute("listJornada", listJornada);
+            request.setAttribute("load", true);
+        } catch (Exception e) {
+            Logger.getLogger(BolsaServlet.class.getName()).log(Level.SEVERE, null, e);
+        }
     }
     
 }
