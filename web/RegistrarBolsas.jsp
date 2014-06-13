@@ -151,7 +151,19 @@
                             <label class="col-md-4 control-label" for="codigo">Código Bolsa de Sangre</label>  
                             <div class="col-md-4 input-group">
                                 <input id="codigo" name="codigo" type="text" placeholder="" class="form-control input-md" required="" value="<%=codigo%>">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                                
+                            </div>
+                        </div>
+                                
+                                <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="cod_jornada">Código Jornada</label>
+                            <div class="col-md-4 input-group">
+                                <select id="cod_jornada" name="cod_jornada" class="form-control">
+                                    <option value=""></option>
+                                    <option value="2510">2510</option>
+                                </select>
+                                
                             </div>
                         </div>
 
@@ -166,7 +178,7 @@
                                     <option value="B">B</option>
                                     <option value="O">O</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                                
                             </div>
                         </div>
 
@@ -179,7 +191,7 @@
                                     <option value="Positivo">+</option>
                                     <option value="Negativo">-</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                                
                             </div>
                         </div>
 
@@ -188,7 +200,7 @@
                             <label class="col-md-4 control-label" for="recoleccion">Fecha de Recolección</label>
                             <div class="col-md-4 input-group">
                                 <input id="recoleccion" name="recoleccion" type="date" placeholder="" class="form-control input-md" required="" value="<%=recoleccion%>">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                                
                             </div>
                         </div>
 
@@ -197,7 +209,7 @@
                             <label class="col-md-4 control-label" for="vencimiento">Fecha de Vencimiento</label>
                             <div class="col-md-4 input-group">
                                 <input id="vencimiento" name="vencimiento" type="date" placeholder="" class="form-control input-md" required="" value="<%=vencimiento%>">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                                
                             </div>
                         </div>
 
@@ -206,7 +218,7 @@
                             <label class="col-md-4 control-label" for="cantidad">Cantidad de Sangre</label>  
                             <div class="col-md-4 input-group">
                                 <input id="cantidad" name="cantidad" type="text" placeholder="Cm3" class="form-control input-md" required="" value="<%=cantidad%>">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                                
                             </div>
                         </div>                 
 
@@ -218,17 +230,7 @@
                             </div>
                         </div>
 
-                        <!-- Select Basic -->
-                        <div class="form-group">
-                            <label class="col-md-4 control-label" for="cod_jornada">Código Jornada</label>
-                            <div class="col-md-4 input-group">
-                                <select id="cod_jornada" name="cod_jornada" class="form-control">
-                                    <option value=""></option>
-                                    <option value="2510">2510</option>
-                                </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
-                            </div>
-                        </div>
+                        
 
                         <!-- Select Basic -->
                         <div class="form-group">
@@ -239,7 +241,7 @@
                                     <option value="Activo">Activo</option>
                                     <option value="Inactivo">Inactivo</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                               
                             </div>
                         </div>
 

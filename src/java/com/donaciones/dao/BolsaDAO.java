@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -130,6 +132,37 @@ public class BolsaDAO extends BaseDAO{
             }
             connectionManager.cerrar(connection);
         }
+    }
+    
+    
+    public List<Bolsa> getBolsas()throws Exception{
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet rs;
+        List<Bolsa> listBolsas = null;
+        try {
+            listBolsas = new LinkedList<>();
+            connection = connectionManager.conectar();
+            ps = connection.prepareStatement("SELECT * FROM BOLSA");
+            rs = ps.executeQuery();
+            while (rs.next()) {                
+                listBolsas.add(new Bolsa(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getDate(5), rs.getDate(6), rs.getInt(7), rs.getString(8), rs.getString(9)));
+            }
+            return listBolsas;
+        } catch (Exception e) {
+            Logger.getLogger(BolsaDAO.class.getName()).log(Level.SEVERE, null, e);
+            throw new Exception("Error al listar Bolsas",e);
+        }finally{
+            try {
+                if ( ps!=null && !ps.isClosed() ){
+                    ps.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(BolsaDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            connectionManager.cerrar(connection);
+        }
+        
     }
 
 }
