@@ -106,7 +106,33 @@ public class BolsaServlet extends HttpServlet {
                 request.getRequestDispatcher("RegistrarBolsas.jsp").forward(request, response);
             }
         } else if ( "Modificar".equals(accion) ){
-            
+            BolsaDAO bolsaDAO = new BolsaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));      
+            String codigo = request.getParameter("codigo");
+            String cod_jornada = request.getParameter("cod_jornada");
+            String grupo_sanguineo = request.getParameter("grupo_sanguineo");
+            String rh = request.getParameter("rh");
+            String recoleccion = request.getParameter("recoleccion");
+            String vencimiento = request.getParameter("vencimiento");
+            String cantidad = request.getParameter("cantidad");
+            String observaciones = request.getParameter("observaciones");
+            String estado = request.getParameter("estado");
+            try {
+                bolsaDAO.modificarBolsa(new Bolsa(codigo, cod_jornada, grupo_sanguineo, rh, recoleccion, vencimiento, Integer.parseInt(cantidad), observaciones, estado));
+                request.setAttribute("mensaje", "Bolsa Modificada Correctamente");
+            } catch (Exception e) {
+                Logger.getLogger(BolsaServlet.class.getName()).log(Level.SEVERE, null, e);
+                request.setAttribute("mensaje", "Error al Modificar la bolsa");
+                request.setAttribute("codigo", codigo);
+                request.setAttribute("cod_jornada", cod_jornada);
+                request.setAttribute("grupo_sanguineo", grupo_sanguineo);
+                request.setAttribute("rh", rh);
+                request.setAttribute("recoleccion", recoleccion);
+                request.setAttribute("vencimiento", vencimiento);
+                request.setAttribute("cantidad", cantidad);
+                request.setAttribute("observaciones", observaciones);
+                request.setAttribute("estado", estado);
+            }
+            request.getRequestDispatcher("RegistrarBolsas.jsp").forward(request, response);
         }
         
         

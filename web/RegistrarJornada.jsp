@@ -34,7 +34,7 @@
     boolean load = (Boolean) request.getAttribute("load") != null ? (Boolean) request.getAttribute("load") : false;
     String cargoDepartamentos;
     String cargoMunicipios;
-    
+
 %>
 
 
@@ -49,9 +49,28 @@
         <script src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
-        <script type="text/javascript">
+        <script type="text/javascript"></script>
+        <script>
+            $(document).ready(function() {
+                $('#departamento').change(function() {
+                    var selectedValue = $(this).val();
+                    var servletUrl = 'JornadaServlet?value=' + selectedValue;
 
+                    $.getJSON(servletUrl, function(options) {
+                        var dropdown2 = $('#municipio');
+                        $('>option', dropdown2).remove(); // Clean old options first.
+                        if (options) {
+                            $.each(opts, function(key, value) {
+                                dropdown2.append($('<option/>').val(key).text(value));
+                            });
+                        } else {
+                            dropdown2.append($('<option/>').text("Please select dropdown1"));
+                        }
+                    });
+                });
+            });
         </script>
+
     </head>
     <body>
         <div id="wrapper">
@@ -118,7 +137,7 @@
                             <label class="col-md-4 control-label" for="codigo">Código</label>  
                             <div class="col-md-4 input-group">
                                 <input id="codigo" name="codigo" type="text" placeholder="" class="form-control input-md" value="<%=codigo%>">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+
                             </div>
                         </div>
 
@@ -127,7 +146,7 @@
                             <label class="col-md-4 control-label" for="descripcion">Descripción</label>
                             <div class="col-md-4 input-group">                     
                                 <textarea class="form-control" id="descripcion" name="descripcion"><%=descripcion%></textarea>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+
                             </div>
                         </div>
 
@@ -136,7 +155,7 @@
                             <label class="col-md-4 control-label" for="fecha_programada">Fecha Programada</label>  
                             <div class="col-md-4 input-group">
                                 <input id="fecha_programada" name="fecha_programada" type="date" placeholder="" class="form-control input-md" value="<%=fecha_programada%>">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+
                             </div>
                         </div>
 
@@ -179,7 +198,7 @@
                             <label class="col-md-4 control-label" for="direccion">Dirección</label>  
                             <div class="col-md-4 input-group">
                                 <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+
                             </div>
                         </div>
 
@@ -188,7 +207,7 @@
                             <label class="col-md-4 control-label" for="donantes">Donantes</label>  
                             <div class="col-md-4 input-group">
                                 <input id="donantes" name="donantes" type="text" placeholder="" class="form-control input-md">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+
                             </div>
                         </div>
 
@@ -284,10 +303,10 @@
                         </div>
 
                     </fieldset>
-                                
+
                     <input type="hidden" name="cargoDepartamentos" id="cargoDepartamentos" />
                     <input type="hidden" name="cargoMunicipios" id="cargoMunicipios" />
-                    
+
                 </form>
 
                 <!-- Modal Buscar-->
