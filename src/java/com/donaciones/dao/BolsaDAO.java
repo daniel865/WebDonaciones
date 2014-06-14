@@ -36,17 +36,18 @@ public class BolsaDAO extends BaseDAO{
         PreparedStatement ps = null;
         try {
             connection = connectionManager.conectar();
-            ps = connection.prepareStatement("INSERT INTO BOLSA(codigo_bol=?, grupo_sanguineo_bol=?, rh_bol=?, fecha_donacion_bol=?, "
-                    + "fecha_venci_bol=?, cantidad_sangre_bol=?, observaciones_bol=?,jornada_don_bol=?,estado_bol=?) VALUES(?,?,?,?,?,?,?,?,?)");
+            ps = connection.prepareStatement("INSERT INTO BOLSA(codigo_bol, jornada_don_bol, grupo_sanguineo_bol, rh_bol, fecha_donacion_bol, fecha_venci_bol, cantidad_sangre_bol, "
+                    + "estado_bol, observaciones_bol) VALUES(?,?,?,?,?,?,?,?,?)");
+            System.out.println("rh: "+bolsa.getRh());
             ps.setString(1, bolsa.getCodigo());
-            ps.setString(2, bolsa.getGrupo_sanguineo());
-            ps.setString(3, bolsa.getRh());
-            ps.setDate(4, bolsa.getFecha_donacion());
-            ps.setDate(5, bolsa.getFecha_vencimiento());
-            ps.setInt(6, bolsa.getCantidad_sangre());
-            ps.setString(7, bolsa.getObservaciones());
-            ps.setString(8, bolsa.getCodigo_jornada());
-            ps.setString(9, bolsa.getEstado());
+            ps.setString(2, bolsa.getCodigo_jornada());
+            ps.setString(3, bolsa.getGrupo_sanguineo());
+            ps.setString(4, bolsa.getRh());
+            ps.setDate(5, bolsa.getFecha_donacion());
+            ps.setDate(6, bolsa.getFecha_vencimiento());
+            ps.setInt(7, bolsa.getCantidad_sangre());
+            ps.setString(8, bolsa.getEstado());
+            ps.setString(9, bolsa.getObservaciones());
             ps.execute();
         } catch (Exception e) {
             Logger.getLogger(BolsaDAO.class.getName()).log(Level.SEVERE, null, e);

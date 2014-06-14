@@ -23,6 +23,7 @@
     String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
     boolean load = (Boolean)request.getAttribute("load") != null ? (Boolean) request.getAttribute("load") : false;
     List<Jornada> listJornada = (List<Jornada>) request.getAttribute("listJornada") != null ? (List<Jornada>) request.getAttribute("listJornada") : null;
+    System.out.print("Entro JSP");
 %>
 
 <%if (mensaje != null) {%>
@@ -143,7 +144,7 @@
 
             <!--Inicio del Formulario -->
             <div class="container">
-                <form id="FormBolsas" class="form-horizontal"  action="BolsasServlet" method="POST">
+                <form id="FormBolsas" class="form-horizontal"  action="BolsaServlet" method="POST">
                     <fieldset>
 
                         <!-- Form Name -->

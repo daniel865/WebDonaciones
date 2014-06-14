@@ -74,7 +74,7 @@ CREATE TABLE BOLSA(
 codigo_bol varchar(10),
 jornada_don_bol varchar(10),
 grupo_sanguineo_bol varchar(10),
-rh_bol  varchar(5),
+rh_bol  varchar(12),
 fecha_donacion_bol  date,
 fecha_venci_bol  date,
 cantidad_sangre_bol  int,

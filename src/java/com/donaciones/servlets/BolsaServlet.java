@@ -13,6 +13,7 @@ import com.donaciones.entities.Bolsa;
 import com.donaciones.entities.Jornada;
 import java.io.IOException;
 import java.sql.Date;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.logging.Level;
@@ -43,16 +44,20 @@ public class BolsaServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        System.out.println("Entro Servlet Bolsa");
+        
         String accion = request.getParameter("accion");
         accion = accion == null ? "Inicio" : accion;
         
         boolean load = false;
         
         if ( "Inicio".equals(accion) ){
+            System.out.println("Entro Inicio");
             request.getRequestDispatcher("RegistrarBolsas.jsp").forward(request, response);
         }else if ( "Guardar".equals(accion) ){
+            System.out.println("Entro Guardar");
             BolsaDAO bolsaDAO = new BolsaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
-            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            
             String codigo = request.getParameter("codigo");
             String cod_jornada = request.getParameter("cod_jornada");
             String grupo_sanguineo = request.getParameter("grupo_sanguineo");
@@ -62,13 +67,17 @@ public class BolsaServlet extends HttpServlet {
             String cantidad = request.getParameter("cantidad");
             String observaciones = request.getParameter("observaciones");
             String estado = request.getParameter("estado");
+            System.out.println("recoleccion :"+recoleccion);
             try {
+                DateFormat formatter = new SimpleDateFormat("YYYY-MM-DD");
                 java.util.Date reco = formatter.parse(recoleccion);
                 java.sql.Date reco1 = new Date(reco.getTime());
                 java.util.Date venci = formatter.parse(vencimiento);
                 java.sql.Date venci1 = new Date(venci.getTime());
+                System.out.println("Venci1: "+venci1);
                 bolsaDAO.crearBolsa(new Bolsa(codigo, cod_jornada, grupo_sanguineo, rh, reco1, venci1, Integer.parseInt(cantidad), observaciones, estado));
                 request.setAttribute("mensaje", "Bolsa registrada correctamente");
+                System.out.println("Bolsa registrada correctamente");
             } catch (Exception e) {
                 Logger.getLogger(BolsaServlet.class.getName()).log(Level.SEVERE, null, e);
                 request.setAttribute("mensaje", "Error al registrar la bolsa");
@@ -82,10 +91,10 @@ public class BolsaServlet extends HttpServlet {
                 request.setAttribute("observaciones", observaciones);
                 request.setAttribute("estado", estado);
             }
-            request.getRequestDispatcher("RegistrarBolsas.jsp").forward(request, response);
+            //request.getRequestDispatcher("RegistrarBolsas.jsp").forward(request, response);
         }else if ( "Consultar".equals(accion) ){
             BolsaDAO bolsaDAO = new BolsaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));  
-            String cog = request.getParameter("buscar_bol");
+            String cod = request.getParameter("buscar_bol");
         } else if ( "Modificar".equals(accion) ){
             
         }
