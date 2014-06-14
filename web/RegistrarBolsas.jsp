@@ -269,7 +269,7 @@
                 </form>
 
                 <!-- Modal Buscar-->
-                <form class="form-horizontal" action="BolsasServlet" method="POST" >
+                <form class="form-horizontal" action="BolsaServlet" method="POST" >
                     <div class="modal fade" id="ModalBuscar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
