@@ -43,8 +43,8 @@ public class BolsaDAO extends BaseDAO{
             ps.setString(2, bolsa.getCodigo_jornada());
             ps.setString(3, bolsa.getGrupo_sanguineo());
             ps.setString(4, bolsa.getRh());
-            ps.setDate(5, bolsa.getFecha_donacion());
-            ps.setDate(6, bolsa.getFecha_vencimiento());
+            ps.setString(5, bolsa.getFecha_donacion());
+            ps.setString(6, bolsa.getFecha_vencimiento());
             ps.setInt(7, bolsa.getCantidad_sangre());
             ps.setString(8, bolsa.getEstado());
             ps.setString(9, bolsa.getObservaciones());
@@ -80,7 +80,9 @@ public class BolsaDAO extends BaseDAO{
             ps.setString(1, codigo);
             rs = ps.executeQuery();
             while(rs.next()){
-                return new Bolsa(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getDate(5), rs.getDate(6), rs.getInt(7), rs.getString(8), rs.getString(9));
+                System.out.println("Observacione:s "+ rs.getString(8));
+                System.out.println("Estado: "+rs.getString(9));
+                return new Bolsa(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7),  rs.getString(9), rs.getString(8));
             }
         } catch (Exception e) {
             Logger.getLogger(BolsaDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -112,8 +114,8 @@ public class BolsaDAO extends BaseDAO{
                     + "fecha_venci_bol=?, cantidad_sangre_bol=?, observaciones_bol=?,jornada_don_bol=?, estado_bol=? WHERE codigo_bol=?");
             ps.setString(1, bolsa.getGrupo_sanguineo());
             ps.setString(2, bolsa.getRh());
-            ps.setDate(3, bolsa.getFecha_donacion());
-            ps.setDate(4, bolsa.getFecha_vencimiento());
+            ps.setString(3, bolsa.getFecha_donacion());
+            ps.setString(4, bolsa.getFecha_vencimiento());
             ps.setInt(5, bolsa.getCantidad_sangre());
             ps.setString(6, bolsa.getObservaciones());
             ps.setString(7, bolsa.getCodigo_jornada());
@@ -147,7 +149,7 @@ public class BolsaDAO extends BaseDAO{
             ps = connection.prepareStatement("SELECT * FROM BOLSA");
             rs = ps.executeQuery();
             while (rs.next()) {                
-                listBolsas.add(new Bolsa(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getDate(5), rs.getDate(6), rs.getInt(7), rs.getString(8), rs.getString(9)));
+                listBolsas.add(new Bolsa(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9)));
             }
             return listBolsas;
         } catch (Exception e) {

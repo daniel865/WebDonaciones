@@ -21,9 +21,11 @@
     String cod_jornada = request.getAttribute("cod_jornada") != null ? (String) request.getAttribute("cod_jornada") : "";
     String buscar_cod = request.getAttribute("buscar_cod") != null ? (String) request.getAttribute("buscar_cod") : "";
     String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
-    boolean load = (Boolean)request.getAttribute("load") != null ? (Boolean) request.getAttribute("load") : false;
+    boolean load = (Boolean) request.getAttribute("load") != null ? (Boolean) request.getAttribute("load") : false;
     List<Jornada> listJornada = (List<Jornada>) request.getAttribute("listJornada") != null ? (List<Jornada>) request.getAttribute("listJornada") : null;
     System.out.print("Entro JSP");
+    System.out.println("recoleccion: " + recoleccion);
+    System.out.println("vencimineto: " + vencimiento);
 %>
 
 <%if (mensaje != null) {%>
@@ -32,22 +34,12 @@
 </script>
 <%}%>
 
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registrar Bolsas de Sangre</title>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
-        <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
-        <script type="text/javascript" src="js/jquery-1.10.2.js"></script> 
-        <script src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-        <script type="text/javascript" src="js/additional-methods.min.js"></script>
-        <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
-        <script type="text/javascript" src="js/ValidacionesBolsas.js"></script>
-        <%if (mensaje != null) {%>
-        <script>
-    $(document).ready(function() {
+<script>
+    function recargarDatos() {
+        $(function() {
+            var jornada = <%=cod_jornada%>;
+            $("#cod_jornada").val(jornada);
+        });
         var estado = '<%=estado%>';
         var rh = '<%=rh%>';
         var grupo_sanguineo = '<%=grupo_sanguineo%>';
@@ -79,20 +71,25 @@
         if (rh === "Negativo") {
             $("#rh option[value=Negativo]").attr("selected", true);
         }
-        $("#cod_jornada option[value=<%=cod_jornada%>]").attr("selected",true);
-    });
-        </script>
-        <%}%>
+    }
+</script>
 
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Registrar Bolsas de Sangre</title>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+        <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
+        <script type="text/javascript" src="js/jquery-1.10.2.js"></script> 
+        <script src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/additional-methods.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
+        <script type="text/javascript" src="js/ValidacionesBolsas.js"></script>
     </head>
-    <body>
-        <script type="text/javascript">
-            $(document).ready(function(){
-                $('#cod_jornada').load('CargarJornadasServlet');
-            });
-        </script>
-        
-        
+    <body onload="JavaScript: recargarDatos();">
+
         <div id="wrapper">
 
             <!-- Menu Horizontal -->
@@ -115,11 +112,11 @@
                         <li class="dropdown active">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-save"></i> Gestionar <b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="RegistrarUsuario.jsp">Gestionar Usuario</a></li>
-                                <li><a href="RegistrarDonante.jsp">Gestionar Donante</a></li>
-                                <li><a href="RegistrarBolsas.jsp">Gestionar Bolsa de Sangre</a></li>
-                                <li><a href="RegistrarHospital.jsp">Gestionar Hospital</a></li>
-                                <li><a href="RegistrarJornada.jsp">Gestionar Jornada de Donación</a></li>
+                                <li><a href="UsuarioServlet">Gestionar Usuario</a></li>
+                                <li><a href="DonanteServlet">Gestionar Donante</a></li>
+                                <li><a href="BolsaServlet">Gestionar Bolsa de Sangre</a></li>
+                                <li><a href="HospitalServlet">Gestionar Hospital</a></li>
+                                <li><a href="JornadaServlet">Gestionar Jornada de Donación</a></li>
                             </ul>                      
                         </li>
                         <li class="dropdown">
@@ -156,24 +153,24 @@
                             <label class="col-md-4 control-label" for="codigo">Código Bolsa de Sangre</label>  
                             <div class="col-md-4 input-group">
                                 <input id="codigo" name="codigo" type="text" placeholder="" class="form-control input-md" required="" value="<%=codigo%>">
-                                
+
                             </div>
                         </div>
-                                
-                                <!-- Select Basic -->
+
+                        <!-- Select Basic -->
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="cod_jornada">Código Jornada</label>
                             <div class="col-md-4 input-group">
                                 <select id="cod_jornada" name="cod_jornada" class="form-control">
                                     <option value="">Selecione una Jornada</option>
                                     <%
-                                        for ( int index=0; listJornada!=null && index<listJornada.size(); index++ ){
+                                        for (int index = 0; listJornada != null && index < listJornada.size(); index++) {
                                             Jornada jornada = listJornada.get(index);
                                     %>
-                                    <option value="<%=jornada.getCodigo()%>"> <%= jornada.getDescripcion() %> </option>
+                                    <option value="<%=jornada.getCodigo()%>"> <%= jornada.getDescripcion()%> </option>
                                     <%}%>
                                 </select>
-                                
+
                             </div>
                         </div>
 
@@ -188,7 +185,7 @@
                                     <option value="B">B</option>
                                     <option value="O">O</option>
                                 </select>
-                                
+
                             </div>
                         </div>
 
@@ -201,7 +198,7 @@
                                     <option value="Positivo">+</option>
                                     <option value="Negativo">-</option>
                                 </select>
-                                
+
                             </div>
                         </div>
 
@@ -210,7 +207,7 @@
                             <label class="col-md-4 control-label" for="recoleccion">Fecha de Recolección</label>
                             <div class="col-md-4 input-group">
                                 <input id="recoleccion" name="recoleccion" type="date" placeholder="" class="form-control input-md" required="" value="<%=recoleccion%>">
-                                
+
                             </div>
                         </div>
 
@@ -219,7 +216,7 @@
                             <label class="col-md-4 control-label" for="vencimiento">Fecha de Vencimiento</label>
                             <div class="col-md-4 input-group">
                                 <input id="vencimiento" name="vencimiento" type="date" placeholder="" class="form-control input-md" required="" value="<%=vencimiento%>">
-                                
+
                             </div>
                         </div>
 
@@ -228,7 +225,7 @@
                             <label class="col-md-4 control-label" for="cantidad">Cantidad de Sangre</label>  
                             <div class="col-md-4 input-group">
                                 <input id="cantidad" name="cantidad" type="text" placeholder="Cm3" class="form-control input-md" required="" value="<%=cantidad%>">
-                                
+
                             </div>
                         </div>                 
 
@@ -236,11 +233,11 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="observaciones">Observaciones</label>
                             <div class="col-md-4">                     
-                                <textarea class="form-control" id="observaciones" name="observaciones" value="<%=observaciones%>"><%=observaciones%></textarea>
+                                <textarea class="form-control" id="observaciones" name="observaciones"><%=observaciones%></textarea>
                             </div>
                         </div>
 
-                        
+
 
                         <!-- Select Basic -->
                         <div class="form-group">
@@ -251,7 +248,7 @@
                                     <option value="Activo">Activo</option>
                                     <option value="Inactivo">Inactivo</option>
                                 </select>
-                               
+
                             </div>
                         </div>
 

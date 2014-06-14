@@ -14,8 +14,8 @@ public class Bolsa {
     private String codigo_jornada;
     private String grupo_sanguineo;
     private String rh;
-    private Date fecha_donacion;
-    private Date fecha_vencimiento;
+    private String fecha_donacion;
+    private String fecha_vencimiento;
     private int cantidad_sangre;
     private String observaciones;
     private String estado;
@@ -32,7 +32,7 @@ public class Bolsa {
      * @param observaciones Observaciones de la bolsa de sangre
      * @param estado Estado de la bolsa de sangre
      */
-    public Bolsa(String codigo, String codigo_jornada, String grupo_sanguineo, String rh, Date fecha_donacion, Date fecha_vencimiento, int cantidad_sangre, String observaciones, String estado) {
+    public Bolsa(String codigo, String codigo_jornada, String grupo_sanguineo, String rh, String fecha_donacion, String fecha_vencimiento, int cantidad_sangre, String observaciones, String estado) {
         this.codigo = codigo;
         this.codigo_jornada = codigo_jornada;
         this.grupo_sanguineo = grupo_sanguineo;
@@ -43,6 +43,8 @@ public class Bolsa {
         this.observaciones = observaciones;
         this.estado = estado;
     }
+
+    
 
     /**
      * Retorna un valor del estado
@@ -128,7 +130,7 @@ public class Bolsa {
      * Retorna la fecha de donacion
      * @return Fecha de donación de la bolsa
      */
-    public Date getFecha_donacion() {
+    public String getFecha_donacion() {
         return fecha_donacion;
     }
 
@@ -136,7 +138,7 @@ public class Bolsa {
      * Asigna un valor a la fecha de donación
      * @param fecha_donacion Feha de donación de la bolsa
      */
-    public void setFecha_donacion(Date fecha_donacion) {
+    public void setFecha_donacion(String fecha_donacion) {
         this.fecha_donacion = fecha_donacion;
     }
 
@@ -144,7 +146,7 @@ public class Bolsa {
      * Retorna la fecha de vencimiento de la bolsa de sangre
      * @return Fecha de Vencimiento de la bolsa
      */
-    public Date getFecha_vencimiento() {
+    public String getFecha_vencimiento() {
         return fecha_vencimiento;
     }
 
@@ -152,7 +154,7 @@ public class Bolsa {
      * Asigna un valor a la fecha de vencimiento
      * @param fecha_vencimiento Fecha de Vencimiento de la bolsa
      */
-    public void setFecha_vencimiento(Date fecha_vencimiento) {
+    public void setFecha_vencimiento(String fecha_vencimiento) {
         this.fecha_vencimiento = fecha_vencimiento;
     }
 
