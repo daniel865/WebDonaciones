@@ -51,7 +51,7 @@
         <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
         <script type="text/javascript"></script>
         <script>
-            $(document).ready(function() {
+           /* $(document).ready(function() {
                 $('#departamento').change(function() {
                     var selectedValue = $(this).val();
                     var servletUrl = 'JornadaServlet?value=' + selectedValue;
@@ -68,7 +68,7 @@
                         }
                     });
                 });
-            });
+            });*/
         </script>
 
     </head>
@@ -334,11 +334,6 @@
                         </div>
                     </div>
                 </form>               
-
-
-
-
-
 
                 <!-- Groups Buttons -->
                 <div class="btn-group col-lg-offset-4 col-lg-4">

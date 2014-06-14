@@ -3,13 +3,17 @@ package com.donaciones.servlets;
 import com.donaciones.dao.Conexion;
 import com.donaciones.dao.DepartamentoDAO;
 import com.donaciones.dao.JornadaDAO;
+import com.donaciones.dao.MunicipioDAO;
 import com.donaciones.entities.Departamento;
 import com.donaciones.entities.Jornada;
+import com.donaciones.entities.Municipio;
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -17,7 +21,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 
 /**
  *
@@ -40,13 +43,13 @@ public class JornadaServlet extends HttpServlet {
         response.setContentType("text/html");
 
         String accion = request.getParameter("accion");
-        accion = accion==null ? "Inicio" : accion;
-        
+        accion = accion == null ? "Inicio" : accion;
+
         boolean load = false;
-        
+
         obtenerDepartamentos(request, response);
 
-        if ( "Guardar".equals(accion)) {
+        if ("Guardar".equals(accion)) {
             JornadaDAO jornadaDAO = new JornadaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String codigo = request.getParameter("codigo");
@@ -243,7 +246,27 @@ public class JornadaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        /*
+        try {
+            MunicipioDAO municipioDAO = new MunicipioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
+            
+            String selectedValue = request.getParameter("value");
+            System.out.println("Valor: "+selectedValue);
+            List<Municipio> listMunDep = municipioDAO.getMunicipiosDepartamento(Integer.parseInt(selectedValue));
+            Map<String, String> options = new HashMap<>();
+            for (int i = 0; i < listMunDep.size(); i++) {
+                Municipio municipio = listMunDep.get(i);
+                options.put( Integer.toString(municipio.getId()), municipio.getNombre());
+            }
+            System.out.println(options.toString());
+            String json = new Gson().toJson(options);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(json);
+        } catch (Exception ex) {
+            Logger.getLogger(JornadaServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        */
     }
 
     /**
@@ -270,21 +293,19 @@ public class JornadaServlet extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
-    public void obtenerDepartamentos(HttpServletRequest request, HttpServletResponse servletResponse){
+    public void obtenerDepartamentos(HttpServletRequest request, HttpServletResponse servletResponse) {
         System.out.println("Entro Obtener Departamentos");
         DepartamentoDAO departamentoDAO = new DepartamentoDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
         List<Departamento> listDepartamentos = null;
         try {
             listDepartamentos = departamentoDAO.getDepartamentos();
-            System.out.println(""+listDepartamentos.toString());   
+            System.out.println("" + listDepartamentos.toString());
             request.setAttribute("listDepartamentos", listDepartamentos);
             request.setAttribute("load", true);
         } catch (Exception e) {
             Logger.getLogger(JornadaServlet.class.getName()).log(Level.SEVERE, null, e);
         }
-        
+
     }
-    
-    
-    
+
 }
