@@ -12,14 +12,35 @@ package com.donaciones.entities;
  */
 public class Municipio {
     
-    private String id;
-    private String id_dep;
+    private int id;
+    private int id_dep;
     private String nombre;
 
-    public Municipio(String id, String id_dep, String nombre) {
+    public Municipio(int id, int id_dep, String nombre) {
         this.id = id;
         this.id_dep = id_dep;
         this.nombre = nombre;
+    }
+
+    public Municipio(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId_dep() {
+        return id_dep;
+    }
+
+    public void setId_dep(int id_dep) {
+        this.id_dep = id_dep;
     }
 
     public String getNombre() {
@@ -29,28 +50,10 @@ public class Municipio {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getId_dep() {
-        return id_dep;
-    }
-
-    public void setId_dep(String id_dep) {
-        this.id_dep = id_dep;
-    }
-
+    
     @Override
     public String toString() {
         return "Municipio{" + "id=" + id + ", id_dep=" + id_dep + ", nombre=" + nombre + '}';
     }
-    
-    
     
 }

@@ -57,14 +57,14 @@
                     var servletUrl = 'JornadaServlet?value=' + selectedValue;
 
                     $.getJSON(servletUrl, function(options) {
-                        var dropdown2 = $('#municipio');
-                        $('>option', dropdown2).remove(); // Clean old options first.
+                        var municipio = $('#municipio');
+                        $('>option', municipio).remove(); // Clean old options first.
                         if (options) {
                             $.each(opts, function(key, value) {
-                                dropdown2.append($('<option/>').val(key).text(value));
+                                municipio.append($('<option/>').val(key).text(value));
                             });
                         } else {
-                            dropdown2.append($('<option/>').text("Please select dropdown1"));
+                            municipio.append($('<option/>').text("Please select dropdown1"));
                         }
                     });
                 });
