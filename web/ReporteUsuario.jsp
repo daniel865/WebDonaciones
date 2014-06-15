@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inicio</title>
+        <title>Reporte de Usuario</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
         <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
@@ -69,7 +69,37 @@
 
             <!-- Comienzo del contenido interno de la página -->
             <div class="container">
-               
+
+                <form id="FormUsuario" class="form-horizontal"  action="UsuarioServlet" method="POST">
+                    <fieldset>
+
+
+                        <!-- Form Name -->
+                        <legend>Reportes Usuarios Usuario</legend>
+                        
+                        <br>
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="nro_identificacion">Número de Identificación</label>  
+                            <div class="col-md-4 input-group">
+                                <input id="nro_identificacion" name="nro_identificacion" type="text" placeholder="" class="form-control input-md">
+                            </div>
+                        </div>
+                        
+                        <br/>
+                        
+                        <div class="container">
+                            <button type="submit" class="btn btn-primary btn-lg col-md-4" name="accion" value="Reporte Usuario">Reporte Usuario</button>
+                            <button type="submit" class="btn btn-primary btn-lg col-md-4" name="accion" value="Listar Usuarios" style="margin-left: 10px;">Listar Usuarios</button>
+                        </div>
+                        
+
+                        
+
+                    </fieldset>
+                </form>
+
+
 
             </div>
 
