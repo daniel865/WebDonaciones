@@ -51,11 +51,10 @@
         <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
         <script type="text/javascript"></script>
         <script>
-           /* $(document).ready(function() {
+            $(document).ready(function() {
                 $('#departamento').change(function() {
                     var selectedValue = $(this).val();
                     var servletUrl = 'JornadaServlet?value=' + selectedValue;
-
                     $.getJSON(servletUrl, function(options) {
                         var municipio = $('#municipio');
                         $('>option', municipio).remove(); // Clean old options first.
@@ -68,7 +67,7 @@
                         }
                     });
                 });
-            });*/
+            });
         </script>
 
     </head>

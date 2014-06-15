@@ -246,12 +246,14 @@ public class JornadaServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*
+        processRequest(request, response);
+        
         try {
             MunicipioDAO municipioDAO = new MunicipioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
             
             String selectedValue = request.getParameter("value");
-            System.out.println("Valor: "+selectedValue);
+            System.out.println("Departamento: "+request.getParameter("departamento"));
+            System.out.println("Valor: "+request.getParameter("value"));
             List<Municipio> listMunDep = municipioDAO.getMunicipiosDepartamento(Integer.parseInt(selectedValue));
             Map<String, String> options = new HashMap<>();
             for (int i = 0; i < listMunDep.size(); i++) {
@@ -263,10 +265,11 @@ public class JornadaServlet extends HttpServlet {
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             response.getWriter().write(json);
+            request.setAttribute("listMunicipios", listMunDep);
         } catch (Exception ex) {
             Logger.getLogger(JornadaServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        */
+        
     }
 
     /**
