@@ -24,9 +24,6 @@
     String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
     String buscar_usu = request.getAttribute("buscar_usu") != null ? (String) request.getAttribute("buscar_usu") : "";
    
-
-    
-
 %>
 
 <%if (mensaje != null) {%>
