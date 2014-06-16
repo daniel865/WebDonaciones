@@ -82,7 +82,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="nro_identificacion">Número de Identificación</label>  
                             <div class="col-md-4 input-group">
-                                <input id="nro_identificacion" name="nro_identificacion" type="text" placeholder="" class="form-control input-md">
+                                <input id="nro_identificacion" name="nro_identificacion" type="text"  placeholder="" class="form-control input-md">
                             </div>
                         </div>
                         

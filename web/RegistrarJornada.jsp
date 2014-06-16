@@ -178,11 +178,11 @@
                             <div class="col-md-4 input-group">
                                 <select id="municipio" name="municipio" class="form-control">
                                     <option>Seleccione un Municipio</option>
-                                    <option>Medellín</option>
-                                    <option>Copacabana</option>
-                                    <option>itaguí</option>
-                                    <option>La Estrella</option>
-                                    <option>Sabaneta</option>
+                                    <option value="1">Medellín</option>
+                                    <option value="2">Copacabana</option>
+                                    <option value="3">itaguí</option>
+                                    <option value="4">La Estrella</option>
+                                    <option value="5">Sabaneta</option>
                                 </select>
 
                             </div>

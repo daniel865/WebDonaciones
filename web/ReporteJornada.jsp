@@ -70,7 +70,7 @@
             <!-- Comienzo del contenido interno de la página -->
             <div class="container">
 
-                <form id="FormUsuario" class="form-horizontal"  action="UsuarioServlet" method="POST">
+                <form id="FormUsuario" class="form-horizontal"  action="JornadaServlet" method="POST">
                     <fieldset>
 
 
