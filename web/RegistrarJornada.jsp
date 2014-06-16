@@ -52,19 +52,16 @@
         <script type="text/javascript"></script>
         <script>
             $(document).ready(function() {
-                $('#departamento').change(function() {
-                    var selectedValue = $(this).val();
-                    var servletUrl = 'JornadaServlet?value=' + selectedValue;
-                    $.getJSON(servletUrl, function(options) {
-                        var municipio = $('#municipio');
-                        $('>option', municipio).remove(); // Clean old options first.
-                        if (options) {
-                            $.each(opts, function(key, value) {
-                                municipio.append($('<option/>').val(key).text(value));
-                            });
-                        } else {
-                            municipio.append($('<option/>').text("Please select dropdown1"));
-                        }
+                $('#departamento').change(function(event) {
+                    var departamento = $("select#departamento").val();
+                    $.get('JornadaServlet', {
+                        value: departamento
+                    }, function(jsonResponse) {
+                        var select = $('#municipio');
+                        select.find('option').remove();
+                        $.each(jsonResponse, function(key, value) {
+                            $('<option>').val(key).text(value).appendTo(select);
+                        });
                     });
                 });
             });
@@ -180,13 +177,6 @@
                             <div class="col-md-4 input-group">
                                 <select id="municipio" name="municipio" class="form-control">
                                     <option>Seleccione un Municipio</option>
-                                    <%
-                                        for (int index = 0; listMunicipios != null && index < listMunicipios.size(); index++) {
-                                            Municipio municipio1 = listMunicipios.get(index);
-
-                                    %>
-                                    <option value="<%=municipio1.getId()%>"><%=municipio1.getNombre()%></option>
-                                    <%}%>
                                 </select>
 
                             </div>
