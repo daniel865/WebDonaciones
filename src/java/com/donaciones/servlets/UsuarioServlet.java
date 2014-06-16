@@ -151,13 +151,12 @@ public class UsuarioServlet extends HttpServlet {
             }
         } else if ("Listar Usuarios".equals(accion)) {
             System.out.println("Entro Listar");
-
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/bd_donaciones", "dba_donaciones", "donaciones");
 
                 ServletOutputStream servletOutputStream = response.getOutputStream();
-                File reportFile = new File(getServletConfig().getServletContext().getRealPath("WEB-INF/ReporteUsuario.jasper"));
+                File reportFile = new File(getServletConfig().getServletContext().getRealPath("WEB-INF/ReporteUsuarios.jasper"));
                 byte[] bytes = null;
 
                 bytes = JasperRunManager.runReportToPdf(reportFile.getPath(), new HashMap(), connection);
@@ -172,6 +171,16 @@ public class UsuarioServlet extends HttpServlet {
                 e.printStackTrace();
             }
             request.getRequestDispatcher("RegistrarUsuario.jsp").forward(request, response);
+        }else if ( "Reporte Usuario".equals(accion) ){
+            System.out.println("Entro Reporte Usuario");
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/bd_donaciones", "dba_donaciones", "donaciones");
+                
+                
+            } catch (Exception e) {
+            
+            }
         }
 
     }
