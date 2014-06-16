@@ -1,6 +1,6 @@
 <%-- 
-    Document   : ReporteUsuario
-    Created on : 14/06/2014, 07:42:33 PM
+    Document   : ReporteJornada
+    Created on : 16/06/2014, 05:53:58 PM
     Author     : Daniel
 --%>
 
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Reporte de Usuario</title>
+        <title>Reporte de Jornadas de Donación</title>
         <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
         <link rel="stylesheet" type="text/css" href="css/dashboard.css" />
@@ -75,26 +75,26 @@
 
 
                         <!-- Form Name -->
-                        <legend>Reportes Usuarios</legend>
-                        
+                        <legend>Reportes Jornadas de Donación</legend>
+
                         <br>
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="nro_identificacion">Número de Identificación</label>  
+                            <label class="col-md-4 control-label" for="nro_identificacion">Código</label>  
                             <div class="col-md-4 input-group">
-                                <input id="nro_identificacion" name="nro_identificacion" type="text" placeholder="" class="form-control input-md">
+                                <input id="codigo" name="codigo" type="text" placeholder="" class="form-control input-md">
                             </div>
                         </div>
-                        
-                        <br/>
-                        
-                        <div class="container">
-                            <button type="submit" class="btn btn-primary btn-lg col-md-4" name="accion" value="Reporte Usuario">Reporte Usuario</button>
-                            <button type="submit" class="btn btn-primary btn-lg col-md-4" name="accion" value="Listar Usuarios" style="margin-left: 10px;">Listar Usuarios</button>
-                        </div>
-                        
 
-                        
+                        <br/>
+
+                        <div class="container">
+                            <button type="submit" class="btn btn-primary btn-lg col-md-4" name="accion" value="Reporte Jornada">Reporte Jornada</button>
+                            <button type="submit" class="btn btn-primary btn-lg col-md-4" name="accion" value="Listar Jornadas" style="margin-left: 10px;">Listar Jornadas</button>
+                        </div>
+
+
+
 
                     </fieldset>
                 </form>
@@ -110,4 +110,5 @@
 
     </body>
 </html>
+
 

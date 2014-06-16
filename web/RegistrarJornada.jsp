@@ -51,7 +51,7 @@
         <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
         <script type="text/javascript"></script>
         <script>
-            $(document).ready(function() {
+           /* $(document).ready(function() {
                 $('#departamento').change(function(event) {
                     var sports = $("select#departamento").val();
                     $.get('JornadaServlet', {
@@ -65,7 +65,7 @@
                     });
                 });
             });
-
+            */
         </script>
 
     </head>
@@ -178,6 +178,11 @@
                             <div class="col-md-4 input-group">
                                 <select id="municipio" name="municipio" class="form-control">
                                     <option>Seleccione un Municipio</option>
+                                    <option>Medellín</option>
+                                    <option>Copacabana</option>
+                                    <option>itaguí</option>
+                                    <option>La Estrella</option>
+                                    <option>Sabaneta</option>
                                 </select>
 
                             </div>
