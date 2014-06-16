@@ -53,9 +53,9 @@
         <script>
             $(document).ready(function() {
                 $('#departamento').change(function(event) {
-                    var departamento = $("select#departamento").val();
+                    var sports = $("select#departamento").val();
                     $.get('JornadaServlet', {
-                        value: departamento
+                        value: sports
                     }, function(jsonResponse) {
                         var select = $('#municipio');
                         select.find('option').remove();
@@ -65,6 +65,7 @@
                     });
                 });
             });
+
         </script>
 
     </head>

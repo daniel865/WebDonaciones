@@ -297,12 +297,10 @@ public class JornadaServlet extends HttpServlet {
     }// </editor-fold>
 
     public void obtenerDepartamentos(HttpServletRequest request, HttpServletResponse servletResponse) {
-        System.out.println("Entro Obtener Departamentos");
         DepartamentoDAO departamentoDAO = new DepartamentoDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
         List<Departamento> listDepartamentos = null;
         try {
             listDepartamentos = departamentoDAO.getDepartamentos();
-            System.out.println("" + listDepartamentos.toString());
             request.setAttribute("listDepartamentos", listDepartamentos);
             request.setAttribute("load", true);
         } catch (Exception e) {
