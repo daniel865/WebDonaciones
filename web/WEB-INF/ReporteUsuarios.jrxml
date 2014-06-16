@@ -122,32 +122,32 @@ FROM
 			<textField>
 				<reportElement x="0" y="1" width="86" height="20" uuid="c1e329a0-d05c-4a51-83c3-8a19e204c89e"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{usuario_nroidentificacion_usu}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{usuario_nroidentificacion_usu}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="86" y="1" width="111" height="20" uuid="a126d97d-1b9d-411d-adef-2174af808140"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{usuario_nombres_usu}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{usuario_nombres_usu}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="197" y="1" width="82" height="20" uuid="9bda6a3b-5f00-400d-a8ba-6322c6d17c6d"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{usuario_apellido1_usu}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{usuario_apellido1_usu}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="279" y="0" width="86" height="20" uuid="d1cd3607-3ac9-43c1-b2cf-04fb1da20d0c"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{usuario_apellido2_usu}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{usuario_apellido2_usu}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="471" y="1" width="82" height="20" uuid="15fa5596-5130-4a78-9f1a-762392939b09"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{usuario_usuario_usu}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{usuario_usuario_usu}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="365" y="1" width="106" height="20" uuid="595e7547-b8cf-4689-97d3-23653a5a10ce"/>
 				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{usuario_correo_usu}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[ $F{usuario_correo_usu}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
