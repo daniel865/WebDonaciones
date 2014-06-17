@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2cdb3b0a-11b8-4494-b03a-5f67148c799c">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="128"/>
+	<property name="ireport.y" value="140"/>
 	<parameter name="cod_jor" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -128,7 +128,7 @@ WHERE
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[  Sangre A+:]]></text>
+				<text><![CDATA[  Sangre A+ :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="136" y="80" width="165" height="20" uuid="e6414a6a-613a-47c3-84a6-ffefc626f3b6"/>
@@ -140,7 +140,7 @@ WHERE
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[  Sangre A-:]]></text>
+				<text><![CDATA[  Sangre A- :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="404" y="80" width="151" height="20" uuid="de57bb36-cd53-4e42-9a94-49ea740e0eb2"/>
@@ -152,7 +152,7 @@ WHERE
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[  Sangre AB+:]]></text>
+				<text><![CDATA[  Sangre AB+ :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="136" y="100" width="165" height="20" uuid="ee64d58c-353b-4612-8b2b-80c37715176e"/>
@@ -164,7 +164,7 @@ WHERE
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[  Sangre AB-:]]></text>
+				<text><![CDATA[  Sangre AB- :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="404" y="100" width="151" height="20" uuid="8e66a7ee-efad-4bab-beae-ad68ec955725"/>
@@ -176,7 +176,7 @@ WHERE
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[  Sangre B+:]]></text>
+				<text><![CDATA[  Sangre B+ :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="136" y="120" width="165" height="20" uuid="8129c8fb-b083-40ce-aa7b-5deccd960307"/>
@@ -188,7 +188,7 @@ WHERE
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[  Sangre B-:]]></text>
+				<text><![CDATA[  Sangre B- :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="404" y="120" width="151" height="20" uuid="5cae8fb8-808c-4fb6-893e-af65bc2518ed"/>
@@ -200,7 +200,7 @@ WHERE
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[  Sangre O+:]]></text>
+				<text><![CDATA[  Sangre O+ :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="136" y="140" width="165" height="20" uuid="dc9a0758-5471-4a5e-adf2-0fbe162a5192"/>
@@ -212,7 +212,7 @@ WHERE
 				<textElement verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
-				<text><![CDATA[  Sangre O-:]]></text>
+				<text><![CDATA[  Sangre O- :]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="404" y="140" width="151" height="20" uuid="abe8c442-c500-498e-b621-8815455fffb7"/>
@@ -220,11 +220,28 @@ WHERE
 			</textField>
 		</band>
 	</pageHeader>
+	<lastPageFooter>
+		<band height="50">
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="0" y="30" width="100" height="20" uuid="99414ead-7ed0-444b-8e20-404f562aeff6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="30" width="80" height="20" uuid="80799bc7-b546-4c7e-883b-a5cb1be55895"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="518" y="30" width="40" height="20" uuid="7590fb12-348e-4e6f-8a64-22f5dadf3202"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
 	<summary>
-		<band height="203" splitType="Stretch">
+		<band height="255" splitType="Stretch">
 			<stackedBar3DChart>
 				<chart>
-					<reportElement x="1" y="0" width="554" height="203" uuid="33b8aa40-54ba-463c-bf5a-5b4cd5943d60"/>
+					<reportElement x="1" y="0" width="554" height="255" uuid="33b8aa40-54ba-463c-bf5a-5b4cd5943d60"/>
 					<chartTitle/>
 					<chartSubtitle/>
 					<chartLegend/>

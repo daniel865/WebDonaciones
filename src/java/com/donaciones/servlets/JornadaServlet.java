@@ -76,7 +76,7 @@ public class JornadaServlet extends HttpServlet {
             String observaciones = request.getParameter("observaciones");
             String estado = request.getParameter("estado");
             try {
-                
+
                 jornadaDAO.crearJornada(new Jornada(codigo, descripcion, fecha_programada, departamento, municipio, direccion, Integer.parseInt(donantes), Integer.parseInt(sangre_a1), Integer.parseInt(sangre_a2),
                         Integer.parseInt(sangre_ab1), Integer.parseInt(sangre_ab2), Integer.parseInt(sangre_b1), Integer.parseInt(sangre_b2), Integer.parseInt(sangre_o1), Integer.parseInt(sangre_o2),
                         estado, observaciones));
@@ -231,28 +231,39 @@ public class JornadaServlet extends HttpServlet {
             request.getRequestDispatcher("RegistrarJornada.jsp").forward(request, response);
         } else if ("Inicio".equals(accion)) {
             request.getRequestDispatcher("RegistrarJornada.jsp").forward(request, response);
-        }else if ( "Reporte Jornada".equals(accion) ){            
+        } else if ("Reporte Jornada".equals(accion)) {
+            JornadaDAO jornadaDAO = new JornadaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
             System.out.println("Entro Reporte Jornada");
             String codigo = request.getParameter("codigo");
+            Jornada jornada;
+
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/bd_donaciones", "dba_donaciones", "donaciones");
+                jornada = jornadaDAO.buscarJornada(codigo);
 
-                ServletOutputStream servletOutputStream = response.getOutputStream();
-                File reportFile = new File(getServletConfig().getServletContext().getRealPath("WEB-INF/ReporteJornada.jasper"));
-                byte[] bytes = null;
+                if (jornada != null) {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/bd_donaciones", "dba_donaciones", "donaciones");
 
-                HashMap parametros = new HashMap();
-                parametros.put("cod_jor", codigo);
+                    ServletOutputStream servletOutputStream = response.getOutputStream();
+                    File reportFile = new File(getServletConfig().getServletContext().getRealPath("WEB-INF/ReporteJornada.jasper"));
+                    byte[] bytes = null;
 
-                bytes = JasperRunManager.runReportToPdf(reportFile.getPath(), parametros, connection);
+                    HashMap parametros = new HashMap();
+                    parametros.put("cod_jor", codigo);
 
-                response.setContentType("application/pdf");
-                response.setContentLength(bytes.length);
+                    bytes = JasperRunManager.runReportToPdf(reportFile.getPath(), parametros, connection);
 
-                servletOutputStream.write(bytes, 0, bytes.length);
-                servletOutputStream.flush();
-                servletOutputStream.close();
+                    response.setContentType("application/pdf");
+                    response.setContentLength(bytes.length);
+
+                    servletOutputStream.write(bytes, 0, bytes.length);
+                    servletOutputStream.flush();
+                    servletOutputStream.close();
+                } else {
+                    request.setAttribute("mensaje", "La Jormada no existe");
+                    request.getRequestDispatcher("RegistrarJornada.jsp").forward(request, response);
+                }
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -273,18 +284,18 @@ public class JornadaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
+
         try {
             MunicipioDAO municipioDAO = new MunicipioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
-            
+
             String selectedValue = request.getParameter("value");
-            System.out.println("Departamento: "+request.getParameter("departamento"));
-            System.out.println("Valor: "+request.getParameter("value"));
+            System.out.println("Departamento: " + request.getParameter("departamento"));
+            System.out.println("Valor: " + request.getParameter("value"));
             List<Municipio> listMunDep = municipioDAO.getMunicipiosDepartamento(Integer.parseInt(selectedValue));
             Map<String, String> options = new HashMap<>();
             for (int i = 0; i < listMunDep.size(); i++) {
                 Municipio municipio = listMunDep.get(i);
-                options.put( Integer.toString(municipio.getId()), municipio.getNombre());
+                options.put(Integer.toString(municipio.getId()), municipio.getNombre());
             }
             System.out.println(options.toString());
             String json = new Gson().toJson(options);
@@ -295,7 +306,7 @@ public class JornadaServlet extends HttpServlet {
         } catch (Exception ex) {
             Logger.getLogger(JornadaServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     /**
