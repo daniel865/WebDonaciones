@@ -231,8 +231,7 @@ public class JornadaServlet extends HttpServlet {
             request.getRequestDispatcher("RegistrarJornada.jsp").forward(request, response);
         } else if ("Inicio".equals(accion)) {
             request.getRequestDispatcher("RegistrarJornada.jsp").forward(request, response);
-        }else if ( "Reporte Jornada".equals(accion) ){
-            
+        }else if ( "Reporte Jornada".equals(accion) ){            
             System.out.println("Entro Reporte Jornada");
             String codigo = request.getParameter("codigo");
             try {
