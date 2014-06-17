@@ -6,6 +6,17 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    String mensaje = request.getParameter("mensaje")!=null ? (String) request.getParameter("mensaje") : null;
+%>
+
+<%if (mensaje != null) {%>
+<script>
+    alert('<%=mensaje%>');
+
+</script>
+<%}%>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

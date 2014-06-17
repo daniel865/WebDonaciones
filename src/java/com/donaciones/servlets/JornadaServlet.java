@@ -261,7 +261,7 @@ public class JornadaServlet extends HttpServlet {
                     servletOutputStream.close();
                 } else {
                     request.setAttribute("mensaje", "La Jormada no existe");
-                    request.getRequestDispatcher("RegistrarJornada.jsp").forward(request, response);
+                    request.getRequestDispatcher("ReporteJornada.jsp").forward(request, response);
                 }
 
             } catch (Exception e) {
