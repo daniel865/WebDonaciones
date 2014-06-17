@@ -47,10 +47,12 @@ public class JornadaServlet extends HttpServlet {
 
         boolean load = false;
 
+        System.out.println("Entro Servlet");
         obtenerDepartamentos(request, response);
 
         if ("Guardar".equals(accion)) {
             JornadaDAO jornadaDAO = new JornadaDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
+            System.out.println("Entro Guardar Sevlet");
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
             String codigo = request.getParameter("codigo");
             String descripcion = request.getParameter("descripcion");

@@ -50,23 +50,6 @@
         <script type="text/javascript" src="js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
         <script type="text/javascript"></script>
-        <script>
-           /* $(document).ready(function() {
-                $('#departamento').change(function(event) {
-                    var sports = $("select#departamento").val();
-                    $.get('JornadaServlet', {
-                        value: sports
-                    }, function(jsonResponse) {
-                        var select = $('#municipio');
-                        select.find('option').remove();
-                        $.each(jsonResponse, function(key, value) {
-                            $('<option>').val(key).text(value).appendTo(select);
-                        });
-                    });
-                });
-            });
-            */
-        </script>
 
     </head>
     <body>
@@ -123,7 +106,7 @@
             <!--  Inicio del Formulario-->
             <div class="container">
 
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="JornadaServlet" method="POST">
                     <fieldset>
 
                         <!-- Form Name -->
@@ -302,6 +285,15 @@
                     <input type="hidden" name="cargoDepartamentos" id="cargoDepartamentos" />
                     <input type="hidden" name="cargoMunicipios" id="cargoMunicipios" />
 
+                    <!-- Groups Buttons -->
+                    <div class="btn-group col-lg-offset-4 col-lg-4">
+                        <!--<button type="button" class="btn btn-default" name="btnnuevo" id="btnnuevo">Nuevo</button>-->
+                        <input type="submit" class="btn btn-default " name="accion" value="Guardar" id="btnguardar" />
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#ModalBuscar" name="btnbuscar" id="btnbuscar">Consultar</button>
+                        <input type="submit" class="btn btn-default" name="accion" value="Modificar" id="btnmodificar" /> 
+                        <button type="button" class="btn btn-default" name="btneliminar" id="btneliminar">Eliminar</button> 
+                    </div>
+
                 </form>
 
                 <!-- Modal Buscar-->
@@ -330,17 +322,12 @@
                     </div>
                 </form>               
 
-                <!-- Groups Buttons -->
-                <div class="btn-group col-lg-offset-4 col-lg-4">
-                    <!--<button type="button" class="btn btn-default" name="btnnuevo" id="btnnuevo">Nuevo</button>-->
-                    <input type="submit" class="btn btn-default " name="accion" value="Guardar" id="btnguardar" />
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#ModalBuscar" name="btnbuscar" id="btnbuscar">Consultar</button>
-                    <input type="submit" class="btn btn-default" name="accion" value="Modificar" id="btnmodificar" /> 
-                    <button type="button" class="btn btn-default" name="btneliminar" id="btneliminar">Eliminar</button> 
-                </div>
+
 
             </div>
 
+            <br/>
+            <br/>
 
         </div>
     </body>

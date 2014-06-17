@@ -23,9 +23,6 @@
     String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
     boolean load = (Boolean) request.getAttribute("load") != null ? (Boolean) request.getAttribute("load") : false;
     List<Jornada> listJornada = (List<Jornada>) request.getAttribute("listJornada") != null ? (List<Jornada>) request.getAttribute("listJornada") : null;
-    System.out.print("Entro JSP");
-    System.out.println("recoleccion: " + recoleccion);
-    System.out.println("vencimineto: " + vencimiento);
 %>
 
 <%if (mensaje != null) {%>

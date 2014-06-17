@@ -80,8 +80,6 @@ public class BolsaDAO extends BaseDAO{
             ps.setString(1, codigo);
             rs = ps.executeQuery();
             while(rs.next()){
-                System.out.println("Observacione:s "+ rs.getString(8));
-                System.out.println("Estado: "+rs.getString(9));
                 return new Bolsa(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7),  rs.getString(9), rs.getString(8));
             }
         } catch (Exception e) {
