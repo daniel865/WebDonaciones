@@ -95,6 +95,35 @@ public class UsuarioDAO extends BaseDAO{
         return null;
     }
     
+    //Busqueda por nombre de usuario
+    public Usuario consultarUsuario(String user)throws Exception{
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet rs;
+        try {
+            connection = connectionManager.conectar();
+            ps = connection.prepareStatement("SELECT * FROM USUARIO WHERE usuario_usu=?");
+            ps.setString(1, user);
+            rs = ps.executeQuery();
+            while (rs.next()) {                
+                return new Usuario(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9));
+            }
+        } catch (Exception e) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+            throw new Exception("Error al buscar Usuario-Nombre Usuario",e);
+        }finally{
+            try {
+                if ( ps!=null && !ps.isClosed() ){
+                    ps.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            connectionManager.cerrar(connection);
+        }
+        return null;     
+    }
+    
     /**
      * Modifica un usuario creado previamente
      * @param usuario Objeto tipo de Usuario con los datos a modificar

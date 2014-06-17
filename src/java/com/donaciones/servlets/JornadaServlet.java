@@ -8,8 +8,10 @@ import com.donaciones.entities.Departamento;
 import com.donaciones.entities.Jornada;
 import com.donaciones.entities.Municipio;
 import com.google.gson.Gson;
+import java.io.File;
 import java.io.IOException;
-import java.sql.Date;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
@@ -17,10 +19,12 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import net.sf.jasperreports.engine.JasperRunManager;
 
 /**
  *
@@ -227,6 +231,32 @@ public class JornadaServlet extends HttpServlet {
             request.getRequestDispatcher("RegistrarJornada.jsp").forward(request, response);
         } else if ("Inicio".equals(accion)) {
             request.getRequestDispatcher("RegistrarJornada.jsp").forward(request, response);
+        }else if ( "Reporte Jornada".equals(accion) ){
+            
+            System.out.println("Entro Reporte Jornada");
+            String codigo = request.getParameter("codigo");
+            try {
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/bd_donaciones", "dba_donaciones", "donaciones");
+
+                ServletOutputStream servletOutputStream = response.getOutputStream();
+                File reportFile = new File(getServletConfig().getServletContext().getRealPath("WEB-INF/ReporteJornada.jasper"));
+                byte[] bytes = null;
+
+                HashMap parametros = new HashMap();
+                parametros.put("cod_jor", codigo);
+
+                bytes = JasperRunManager.runReportToPdf(reportFile.getPath(), parametros, connection);
+
+                response.setContentType("application/pdf");
+                response.setContentLength(bytes.length);
+
+                servletOutputStream.write(bytes, 0, bytes.length);
+                servletOutputStream.flush();
+                servletOutputStream.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
 
     }

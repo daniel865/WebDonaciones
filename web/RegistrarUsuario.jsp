@@ -23,7 +23,7 @@
     String perfil = request.getAttribute("perfil") != null ? (String) request.getAttribute("perfil") : "";
     String estado = request.getAttribute("estado") != null ? (String) request.getAttribute("estado") : "";
     String buscar_usu = request.getAttribute("buscar_usu") != null ? (String) request.getAttribute("buscar_usu") : "";
-   
+
 %>
 
 <%if (mensaje != null) {%>
@@ -132,13 +132,13 @@
 
 
             <div class="container" >
-                
+
                 <form id="FormUsuario" class="form-horizontal"  action="UsuarioServlet" method="POST">
                     <fieldset>
 
 
                         <!-- Form Name -->
-                        <legend>Registar Usuario</legend>
+                        <legend>Registrar Usuario</legend>
 
                         <br>
                         <!-- Text input-->
@@ -247,11 +247,22 @@
                         <div class="btn-group col-lg-offset-4 col-lg-4">
                             <!--<button type="button" class="btn btn-default" name="btnnuevo" id="btnnuevo">Nuevo</button>-->
                             <input type="submit" class="btn btn-default" name="accion" value="Guardar" id="btnguardar" />
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#ModalBuscar" name="btnbuscar" id="btnbuscar">Consultar</button>
+
+                            <!-- Single button -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    Buscar <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#" data-toggle="modal" data-target="#ModalBuscar">Número de Identifiación</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#ModalConsultar">Nombre de Usuario</a></li>       
+                                </ul>
+                            </div>
+
                             <input type="submit" class="btn btn-default" name="accion" value="Modificar" id="btnmodificar" /> 
                             <button type="button" class="btn btn-default" name="btneliminar" id="btneliminar">Eliminar</button> 
                         </div>
-                        
+
                     </fieldset>
                 </form>
 
@@ -280,8 +291,34 @@
                         </div>
                     </div>
                 </form>
-                
-                
+
+                <!-- Modal Buscar-->
+                <form class="form-horizontal" action="UsuarioServlet" method="POST" >
+                    <div class="modal fade" id="ModalConsultar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Buscar Usuario</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" for="buscar">Nombre de Usuario</label>  
+                                        <div class="col-md-4">
+                                            <input id="buscar_usu" name="buscar_usu" placeholder="" class="form-control input-md"  type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                                    <input type="submit" value="Buscar" class="btn btn-primary" name="accion" id="btnbuscarn">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
             </div>
         </div>
 

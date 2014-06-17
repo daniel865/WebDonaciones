@@ -99,6 +99,31 @@ public class UsuarioServlet extends HttpServlet {
                 request.setAttribute("mensaje", "El usuario no fue encontrado");
                 request.getRequestDispatcher("RegistrarUsuario.jsp").forward(request, response);
             }
+        } else if ("Buscar".equals(accion)) {
+            //Busqueda por Nombre de Usuario
+            UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
+            String user = request.getParameter("buscar_usu");
+            Usuario usuario;
+            try {
+                usuario = usuarioDAO.consultarUsuario(user);
+                request.setAttribute("usuario", user);
+                request.setAttribute("nro_identificacion", usuario.getNro_Identificacion());
+                request.setAttribute("nombres", usuario.getNombres());
+                request.setAttribute("apellido1", usuario.getApellido1());
+                request.setAttribute("apellido2", usuario.getApellido2());
+                request.setAttribute("usuario", usuario.getUsuario());
+                request.setAttribute("correo", usuario.getCorreo());
+                request.setAttribute("pass", usuario.getPassword());
+                request.setAttribute("pass2", usuario.getPassword());
+                request.setAttribute("perfil", usuario.getPerfil());
+                request.setAttribute("estado", usuario.getEstado());
+                request.setAttribute("mensaje", "El usuario fue encontrado");
+                request.getRequestDispatcher("RegistrarUsuario.jsp").forward(request, response);
+            } catch (Exception e) {
+                Logger.getLogger(Usuario.class.getName()).log(Level.SEVERE, null, e);
+                request.setAttribute("mensaje", "El usuario no fue encontrado");
+                request.getRequestDispatcher("RegistrarUsuario.jsp").forward(request, response);
+            }
         } else if ("Modificar".equals(accion)) {
             UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
             String nro_identificacion = request.getParameter("nro_identificacion");
@@ -171,15 +196,31 @@ public class UsuarioServlet extends HttpServlet {
                 e.printStackTrace();
             }
             request.getRequestDispatcher("RegistrarUsuario.jsp").forward(request, response);
-        }else if ( "Reporte Usuario".equals(accion) ){
+        } else if ("Reporte Usuario".equals(accion)) {
             System.out.println("Entro Reporte Usuario");
+            String documento = request.getParameter("nro_identificacion");
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/bd_donaciones", "dba_donaciones", "donaciones");
-                
-                
+
+                ServletOutputStream servletOutputStream = response.getOutputStream();
+                File reportFile = new File(getServletConfig().getServletContext().getRealPath("WEB-INF/ReporteUsuario.jasper"));
+                byte[] bytes = null;
+
+                HashMap parametros = new HashMap();
+                parametros.put("id_usu", documento);
+
+                bytes = JasperRunManager.runReportToPdf(reportFile.getPath(), parametros, connection);
+
+                response.setContentType("application/pdf");
+                response.setContentLength(bytes.length);
+
+                servletOutputStream.write(bytes, 0, bytes.length);
+                servletOutputStream.flush();
+                servletOutputStream.close();
+
             } catch (Exception e) {
-            
+                e.printStackTrace();
             }
         }
 
