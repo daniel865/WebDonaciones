@@ -43,7 +43,7 @@ public class JornadaDAO extends BaseDAO{
                     + "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             ps.setString(1, jornada.getCodigo());
             ps.setString(2, jornada.getDescripcion());
-            ps.setDate(3, jornada.getFecha());
+            ps.setString(3, jornada.getFecha());
             ps.setString(4, jornada.getDepartamento());
             ps.setString(5, jornada.getMunicipio());
             ps.setString(6, jornada.getDireccion());
@@ -90,7 +90,7 @@ public class JornadaDAO extends BaseDAO{
             ps.setString(1, codigo);
             rs = ps.executeQuery();
             while(rs.next()){
-                return new Jornada(rs.getString(1), rs.getString(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10), rs.getInt(11), rs.getInt(12), rs.getInt(13), rs.getInt(14), rs.getInt(15), rs.getString(16), rs.getString(17));
+                return new Jornada(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), rs.getInt(10), rs.getInt(11), rs.getInt(12), rs.getInt(13), rs.getInt(14), rs.getInt(15), rs.getString(16), rs.getString(17));
             }
         } catch (Exception e) {
             Logger.getLogger(JornadaDAO.class.getName()).log(Level.SEVERE, null, e);
@@ -123,7 +123,7 @@ public class JornadaDAO extends BaseDAO{
                     + "sangre_b1_jor=?, sangre_b2_jor=?, sangre_o1_jor=?, sangre_o2_jor=?, estado_jor=?, observaciones_jor=? "
                     + "WHERE codigo_jor=?");
             ps.setString(1, jornada.getDescripcion());
-            ps.setDate(2, jornada.getFecha());
+            ps.setString(2, jornada.getFecha());
             ps.setString(3, jornada.getDepartamento());
             ps.setString(4, jornada.getMunicipio());
             ps.setString(5, jornada.getDireccion());
@@ -170,7 +170,7 @@ public class JornadaDAO extends BaseDAO{
             ps = connection.prepareStatement("SELECT * FROM jornada");
             rs = ps.executeQuery();
             while (rs.next()) {                
-                listJornadas.add(new Jornada(rs.getString(1), rs.getString(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), 
+                listJornadas.add(new Jornada(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getInt(8), rs.getInt(9), 
                     rs.getInt(10), rs.getInt(11), rs.getInt(12), rs.getInt(13), rs.getInt(14), rs.getInt(15), rs.getString(16), rs.getString(17)));
             }
             return listJornadas;

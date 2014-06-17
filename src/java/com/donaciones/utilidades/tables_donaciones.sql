@@ -52,7 +52,7 @@ estado_hos varchar(10)
 CREATE TABLE JORNADA(
 codigo_jor varchar(10),
 descripcion_jor varchar(200),
-fecha_jor date,
+fecha_jor varchar(15),
 departamento_jor int,
 municipio_jor int,
 direccion_jor varchar(20),

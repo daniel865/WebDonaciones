@@ -16,7 +16,7 @@ public class Jornada {
     
     private String codigo;
     private String descripcion;
-    private Date fecha;
+    private String fecha;
     private String departamento;
     private String municipio;
     private String direccion;
@@ -32,7 +32,7 @@ public class Jornada {
     private String estado;
     private String observaciones;
 
-    public Jornada(String codigo, String descripcion, Date fecha, String departamento, String municipio, String direccion, int cant_donantes, int sangre_a1, int sangre_a2, int sangre_ab1, int sangre_ab2, int sangre_b1, int sangre_b2, int sangre_o1, int sangre_o2, String estado, String observaciones) {
+    public Jornada(String codigo, String descripcion, String fecha, String departamento, String municipio, String direccion, int cant_donantes, int sangre_a1, int sangre_a2, int sangre_ab1, int sangre_ab2, int sangre_b1, int sangre_b2, int sangre_o1, int sangre_o2, String estado, String observaciones) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.fecha = fecha;
@@ -68,11 +68,11 @@ public class Jornada {
         this.descripcion = descripcion;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -188,6 +188,5 @@ public class Jornada {
         this.observaciones = observaciones;
     }
 
-    
     
 }

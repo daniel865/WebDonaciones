@@ -70,9 +70,8 @@ public class JornadaServlet extends HttpServlet {
             String observaciones = request.getParameter("observaciones");
             String estado = request.getParameter("estado");
             try {
-                java.util.Date fec = formatter.parse(fecha_programada);
-                Date fec1 = new Date(fec.getTime());
-                jornadaDAO.crearJornada(new Jornada(codigo, descripcion, fec1, departamento, municipio, direccion, Integer.parseInt(donantes), Integer.parseInt(sangre_a1), Integer.parseInt(sangre_a2),
+                
+                jornadaDAO.crearJornada(new Jornada(codigo, descripcion, fecha_programada, departamento, municipio, direccion, Integer.parseInt(donantes), Integer.parseInt(sangre_a1), Integer.parseInt(sangre_a2),
                         Integer.parseInt(sangre_ab1), Integer.parseInt(sangre_ab2), Integer.parseInt(sangre_b1), Integer.parseInt(sangre_b2), Integer.parseInt(sangre_o1), Integer.parseInt(sangre_o2),
                         estado, observaciones));
                 request.setAttribute("mensaje", "Jornada creada correctamente");
@@ -149,9 +148,7 @@ public class JornadaServlet extends HttpServlet {
             String observaciones = request.getParameter("observaciones");
             String estado = request.getParameter("estado");
             try {
-                java.util.Date fec = formatter.parse(fecha_programada);
-                Date fec1 = new Date(fec.getTime());
-                jornadaDAO.modificarJornada(new Jornada(codigo, descripcion, fec1, departamento, municipio, direccion, Integer.parseInt(donantes), Integer.parseInt(sangre_a1), Integer.parseInt(sangre_a2),
+                jornadaDAO.modificarJornada(new Jornada(codigo, descripcion, fecha_programada, departamento, municipio, direccion, Integer.parseInt(donantes), Integer.parseInt(sangre_a1), Integer.parseInt(sangre_a2),
                         Integer.parseInt(sangre_ab1), Integer.parseInt(sangre_ab2), Integer.parseInt(sangre_b1), Integer.parseInt(sangre_b2), Integer.parseInt(sangre_o1), Integer.parseInt(sangre_o2),
                         estado, observaciones));
                 request.setAttribute("mensaje", "Jornada modificada correctamente");
@@ -199,9 +196,7 @@ public class JornadaServlet extends HttpServlet {
             String observaciones = request.getParameter("observaciones");
             String estado = request.getParameter("estado");
             try {
-                java.util.Date fec = formatter.parse(fecha_programada);
-                Date fec1 = new Date(fec.getTime());
-                jornadaDAO.modificarJornada(new Jornada(codigo, descripcion, fec1, departamento, municipio, direccion, Integer.parseInt(donantes), Integer.parseInt(sangre_a1), Integer.parseInt(sangre_a2),
+                jornadaDAO.modificarJornada(new Jornada(codigo, descripcion, fecha_programada, departamento, municipio, direccion, Integer.parseInt(donantes), Integer.parseInt(sangre_a1), Integer.parseInt(sangre_a2),
                         Integer.parseInt(sangre_ab1), Integer.parseInt(sangre_ab2), Integer.parseInt(sangre_b1), Integer.parseInt(sangre_b2), Integer.parseInt(sangre_o1), Integer.parseInt(sangre_o2),
                         estado, observaciones));
                 request.setAttribute("mensaje", "Jornada modificada correctamente");
