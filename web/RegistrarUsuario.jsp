@@ -170,7 +170,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="apellido2">Segundo Apellido</label>  
                             <div class="col-md-4 input-group">
-                                <input id="apellidos" name="apellido2" placeholder="" class="form-control input-md" required="" type="text" value="<%=apellido2%>" >
+                                <input id="apellidos" name="apellido2" placeholder="" class="form-control input-md"  type="text" value="<%=apellido2%>" >
                             </div>
                         </div>        
 
