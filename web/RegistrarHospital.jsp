@@ -185,7 +185,7 @@
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="tipo">Tipo de Hospital</label>
+                            <label class="col-md-4 control-label" for="tipo">Tipo de Hospital*</label>
                             <div class="col-md-4 input-group">
                                 <select id="tipo" name="tipo" class="form-control input-md">
                                     <option value=""></option>
@@ -193,40 +193,36 @@
                                     <option value="2">Público</option>
                                     <option value="3">Clínica</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="nit">NIT Hospital</label>  
+                            <label class="col-md-4 control-label" for="nit">NIT Hospital*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="nit" name="nit" type="text" placeholder="" class="form-control input-md" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="razon">Razón Social</label>  
+                            <label class="col-md-4 control-label" for="razon">Razón Social*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="razon" name="razon" type="text" placeholder="" class="form-control input-md" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="direccion">Dirección</label>  
+                            <label class="col-md-4 control-label" for="direccion">Dirección*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="departamento">Departamento</label>
+                            <label class="col-md-4 control-label" for="departamento">Departamento*</label>
                             <div class="col-md-4 input-group">
                                 <select id="departamento" name="departamento" class="form-control input-md">
                                     <option value=""></option>
@@ -234,13 +230,12 @@
                                     <option value="2">Amazonas</option>
                                     <option value="">Arauca</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="municipio">Municipio </label>
+                            <label class="col-md-4 control-label" for="municipio">Municipio* </label>
                             <div class="col-md-4 input-group">
                                 <select id="municipio" name="municipio" class="form-control input-md">
                                     <option value=""></option>
@@ -248,49 +243,44 @@
                                     <option value="2">Andes</option>
                                     <option value="">Angostura</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="telefono">Teléfono</label>  
+                            <label class="col-md-4 control-label" for="telefono">Teléfono*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="telefono" name="telefono" type="text" placeholder="" class="form-control input-md" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="representante">Representante</label>  
+                            <label class="col-md-4 control-label" for="representante">Representante*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="representante" name="representante" type="text" placeholder="" class="form-control input-md">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="tel_representante">Teléfono Representante</label>  
+                            <label class="col-md-4 control-label" for="tel_representante">Teléfono Representante*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="tel_representante" name="tel_representante" type="text" placeholder="" class="form-control input-md">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="correo_representante">Correo Representante</label>  
+                            <label class="col-md-4 control-label" for="correo_representante">Correo Representante*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="correo_representante" name="correo_representante" type="text" placeholder="" class="form-control input-md">
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="nivel">Nivel Hospital</label>
+                            <label class="col-md-4 control-label" for="nivel">Nivel Hospital*</label>
                             <div class="col-md-4 input-group">
                                 <select id="nivel" name="nivel" class="form-control input-md">
                                     <option value=""></option>
@@ -298,21 +288,24 @@
                                     <option value="2">Segundo Nivel</option>
                                     <option value="3">Tercer Nivel</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+
                             </div>
                         </div>
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="estado">Estado</label>
+                            <label class="col-md-4 control-label" for="estado">Estado*</label>
                             <div class="col-md-4 input-group">
                                 <select id="estado" name="estado" class="form-control input-md">
                                     <option value=""></option>
                                     <option value="1">Activo</option>
                                     <option value="2">Inactvo</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
+                        </div>
+                        
+                        <div class="form-group container" style="margin-left: 290px;">
+                            <label class="col-md-4 control-label">Los campos con * son obligatorios</label>
                         </div>
 
 

@@ -231,7 +231,7 @@
                             </div>
                         </div>
 
-                        <!-- Select Basic -->
+                        
                         <div class="form-group container" style="margin-left: 290px;">
                             <label class="col-md-4 control-label">Los campos con * son obligatorios</label>
                         </div>
@@ -244,28 +244,14 @@
 
                             <!-- Split button -->
                             <div class="btn-group">
-                                <button type="button" class="btn btn-danger">Action</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                                <button type="button" class="btn btn-default">Buscar</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                 </button>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                </ul>
-                            </div>
-
-                            <!-- Single button -->
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    Buscar <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
                                     <li><a href="#" data-toggle="modal" data-target="#ModalBuscar">Número de Identifiación</a></li>
-                                    <li><a href="#" data-toggle="modal" data-target="#ModalConsultar">Nombre de Usuario</a></li>       
+                                    <li><a href="#" data-toggle="modal" data-target="#ModalConsultar">Nombre de Usuario</a></li>
                                 </ul>
                             </div>
 

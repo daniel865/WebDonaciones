@@ -233,8 +233,6 @@
                             </div>
                         </div>
 
-
-
                         <!-- Select Basic -->
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="estado">Estado*</label>
@@ -244,10 +242,12 @@
                                     <option value="Activo">Activo</option>
                                     <option value="Inactivo">Inactivo</option>
                                 </select>
-
                             </div>
                         </div>
 
+                        <div class="form-group container" style="margin-left: 290px;">
+                            <label class="col-md-4 control-label">Los campos con * son obligatorios</label>
+                        </div>
 
                         <!-- Groups Buttons -->
                         <div class="btn-group col-lg-offset-4 col-lg-4">
@@ -260,7 +260,7 @@
 
                         <br/>
                         <br/>
-                        
+
                     </fieldset>
                 </form>
 
