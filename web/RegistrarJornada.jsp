@@ -37,6 +37,29 @@
 
 %>
 
+<%if (mensaje != null) {%>
+<script>
+    alert('<%=mensaje%>');
+</script>
+<%}%>
+
+<script>
+    function recargarDatos() {
+        $(function() {
+            var departamento = <%= departamento%>;
+            var municipio = <%= municipio%>;
+            $("#departamento").val(departamento);
+            $("#municipio").val(municipio);
+        });
+        var estado = <%= estado%>;
+        if (estado === "Activo") {
+            $("#estado option[value=Activo]").attr("selected", true);
+        }
+        if (estado === "Inactivo") {
+            $("#estado option[value=Inactivo]").attr("selected", true);
+        }
+    }
+</script>
 
 <html>
     <head>
@@ -51,7 +74,7 @@
         <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
         <script type="text/javascript" src="js/ValidacionesJornada.js"></script>
     </head>
-    <body>
+    <body onload="Javascript: recargarDatos();">
         <div id="wrapper">
 
             <!-- Menu Horizontal -->
@@ -173,7 +196,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="direccion">Dirección</label>  
                             <div class="col-md-4 input-group">
-                                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md">
+                                <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" value="<%= direccion%>">
 
                             </div>
                         </div>
@@ -182,7 +205,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="donantes">Donantes</label>  
                             <div class="col-md-4 input-group">
-                                <input id="donantes" name="donantes" type="text" placeholder="" class="form-control input-md">
+                                <input id="donantes" name="donantes" type="text" placeholder="" class="form-control input-md" value="<%= donantes%>" >
 
                             </div>
                         </div>
@@ -191,7 +214,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="sangre_a1">Cantidad Sangre A+</label>  
                             <div class="col-md-4">
-                                <input id="sangre_a1" name="sangre_a1" type="text" placeholder="Cm3" class="form-control input-md">
+                                <input id="sangre_a1" name="sangre_a1" type="text" placeholder="Cm3" class="form-control input-md" value="<%= sangre_a1%>" >
                             </div>
                         </div>
 
@@ -199,7 +222,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="sangre_a2">Cantidad Sangre A-</label>  
                             <div class="col-md-4">
-                                <input id="sangre_a2" name="sangre_a2" type="text" placeholder="Cm3" class="form-control input-md">
+                                <input id="sangre_a2" name="sangre_a2" type="text" placeholder="Cm3" class="form-control input-md" value="<%= sangre_a2%>">
 
                             </div>
                         </div>
@@ -208,7 +231,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="sangre_ab1">Cantidad Sangre AB+</label>  
                             <div class="col-md-4">
-                                <input id="sangre_ab1" name="sangre_ab1" type="text" placeholder="Cm3" class="form-control input-md">
+                                <input id="sangre_ab1" name="sangre_ab1" type="text" placeholder="Cm3" class="form-control input-md" value="<%= sangre_ab1%>" >
 
                             </div>
                         </div>
@@ -217,7 +240,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="sangre_ab2">Cantidad Sangre AB-</label>  
                             <div class="col-md-4">
-                                <input id="sangre_ab2" name="sangre_ab2" type="text" placeholder="Cm3" class="form-control input-md">
+                                <input id="sangre_ab2" name="sangre_ab2" type="text" placeholder="Cm3" class="form-control input-md" value="<%= sangre_ab2%>">
 
                             </div>
                         </div>
@@ -226,7 +249,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="sangre_b1">Cantidad Sangre B+</label>  
                             <div class="col-md-4">
-                                <input id="sangre_b1" name="sangre_b1" type="text" placeholder="Cm3" class="form-control input-md">
+                                <input id="sangre_b1" name="sangre_b1" type="text" placeholder="Cm3" class="form-control input-md" value="<%= sangre_b1%>">
 
                             </div>
                         </div>
@@ -235,7 +258,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="sangre_b2">Cantidad Sangre B-</label>  
                             <div class="col-md-4">
-                                <input id="sangre_b2" name="sangre_b2" type="text" placeholder="Cm3" class="form-control input-md">
+                                <input id="sangre_b2" name="sangre_b2" type="text" placeholder="Cm3" class="form-control input-md" value="<%= sangre_b2%>">
 
                             </div>
                         </div>
@@ -244,7 +267,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="sangre_o1">Cantidad Sangre O+</label>  
                             <div class="col-md-4">
-                                <input id="sangre_o1" name="sangre_o1" type="text" placeholder="Cm3" class="form-control input-md">
+                                <input id="sangre_o1" name="sangre_o1" type="text" placeholder="Cm3" class="form-control input-md" value="<%= sangre_o1%>">
 
                             </div>
                         </div>
@@ -253,7 +276,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="sangre_o2">Cantidad Sangre O-</label>  
                             <div class="col-md-4">
-                                <input id="sangre_o2" name="sangre_o2" type="text" placeholder="Cm3" class="form-control input-md">
+                                <input id="sangre_o2" name="sangre_o2" type="text" placeholder="Cm3" class="form-control input-md" value="<%= sangre_o2%>">
 
                             </div>
                         </div>
@@ -262,7 +285,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="observaciones">Observaciones</label>
                             <div class="col-md-4">                     
-                                <textarea class="form-control" id="observaciones" name="observaciones"></textarea>
+                                <textarea class="form-control" id="observaciones" name="observaciones"><%= observaciones%></textarea>
                             </div>
                         </div>
 
@@ -274,7 +297,6 @@
                                     <option value="Activo">Activo</option>
                                     <option value="Inactivo">Inactivo</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
@@ -295,7 +317,7 @@
                 </form>
 
                 <!-- Modal Buscar-->
-                <form class="form-horizontal" action="UsuarioServlet" method="POST" >
+                <form class="form-horizontal" action="JornadaServlet" method="POST" >
                     <div class="modal fade" id="ModalBuscar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">

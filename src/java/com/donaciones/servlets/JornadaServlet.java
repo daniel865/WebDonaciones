@@ -76,11 +76,10 @@ public class JornadaServlet extends HttpServlet {
             String observaciones = request.getParameter("observaciones");
             String estado = request.getParameter("estado");
             try {
-
                 jornadaDAO.crearJornada(new Jornada(codigo, descripcion, fecha_programada, departamento, municipio, direccion, Integer.parseInt(donantes), Integer.parseInt(sangre_a1), Integer.parseInt(sangre_a2),
                         Integer.parseInt(sangre_ab1), Integer.parseInt(sangre_ab2), Integer.parseInt(sangre_b1), Integer.parseInt(sangre_b2), Integer.parseInt(sangre_o1), Integer.parseInt(sangre_o2),
                         estado, observaciones));
-                request.setAttribute("mensaje", "Jornada creada correctamente");
+                request.setAttribute("mensaje", "Jornada Almacenada Correctamente");
             } catch (Exception e) {
                 Logger.getLogger(JornadaServlet.class.getName()).log(Level.SEVERE, null, e);
                 request.setAttribute("mensaje", "Error al crear la jornada");
@@ -109,6 +108,7 @@ public class JornadaServlet extends HttpServlet {
             Jornada jornada;
             try {
                 jornada = jornadaDAO.buscarJornada(id_jor);
+                System.out.println("Onservaciones: "+jornada.getObservaciones());
                 request.setAttribute("mensaje", "La jornada fue encontrada");
                 request.setAttribute("codigo", jornada.getCodigo());
                 request.setAttribute("descripcion", jornada.getDescripcion());
@@ -116,15 +116,15 @@ public class JornadaServlet extends HttpServlet {
                 request.setAttribute("departamento", jornada.getDepartamento());
                 request.setAttribute("municipio", jornada.getMunicipio());
                 request.setAttribute("direccion", jornada.getDireccion());
-                request.setAttribute("donantes", jornada.getCant_donantes());
-                request.setAttribute("sangre_a1", jornada.getSangre_a1());
-                request.setAttribute("sangre_a2", jornada.getSangre_a2());
-                request.setAttribute("sangre_ab1", jornada.getSangre_ab1());
-                request.setAttribute("sangre_ab2", jornada.getSangre_ab2());
-                request.setAttribute("sangre_b1", jornada.getSangre_b1());
-                request.setAttribute("sangre_b2", jornada.getSangre_b2());
-                request.setAttribute("sangre_o1", jornada.getSangre_o1());
-                request.setAttribute("sangre_o2", jornada.getSangre_o2());
+                request.setAttribute("donantes", Integer.toString(jornada.getCant_donantes()));
+                request.setAttribute("sangre_a1", Integer.toString(jornada.getSangre_a1()));
+                request.setAttribute("sangre_a2", Integer.toString(jornada.getSangre_a2()));
+                request.setAttribute("sangre_ab1", Integer.toString(jornada.getSangre_ab1()));
+                request.setAttribute("sangre_ab2", Integer.toString(jornada.getSangre_ab2()));
+                request.setAttribute("sangre_b1", Integer.toString(jornada.getSangre_b1()));
+                request.setAttribute("sangre_b2", Integer.toString(jornada.getSangre_b2()));
+                request.setAttribute("sangre_o1", Integer.toString(jornada.getSangre_o1()));
+                request.setAttribute("sangre_o2", Integer.toString(jornada.getSangre_o2()));
                 request.setAttribute("observaciones", jornada.getObservaciones());
                 request.setAttribute("estado", jornada.getEstado());
                 request.getRequestDispatcher("RegistrarJornada.jsp").forward(request, response);

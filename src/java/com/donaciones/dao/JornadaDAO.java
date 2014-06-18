@@ -57,7 +57,7 @@ public class JornadaDAO extends BaseDAO{
             ps.setInt(14, jornada.getSangre_o1());
             ps.setInt(15, jornada.getSangre_o2());
             ps.setString(16, jornada.getEstado());
-            ps.setString(17, jornada.getDescripcion());
+            ps.setString(17, jornada.getObservaciones());
             ps.execute();           
         } catch (Exception e) {
             Logger.getLogger(JornadaDAO.class.getName()).log(Level.SEVERE, null, e);

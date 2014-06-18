@@ -110,7 +110,7 @@
                                 <input type="submit" name="accion" id="btningresar" Value="Ingresar" class="btn btn-block btn-success" />
                             </div>
                             <div class="col-md-5">
-                                <a id="forpass" name="forpass" class="btn btn-block btn-warning" href="index.jsp">Cancelar</a>
+                                <a id="forpass" name="forpass" class="btn btn-block btn-warning" href="index.html">Cancelar</a>
                             </div>  
                         </div>
                     </fieldset>
