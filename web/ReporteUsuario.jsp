@@ -6,6 +6,16 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%
+    String mensaje = request.getAttribute("mensaje") != null ? (String) request.getAttribute("mensaje") : null;
+%>
+
+<%if (mensaje != null) {%>
+<script>
+    alert('<%=mensaje%>');
+
+</script>
+<%}%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -75,7 +85,7 @@
 
                         <!-- Form Name -->
                         <legend>Reportes Usuarios</legend>
-                        
+
                         <br>
                         <!-- Text input-->
                         <div class="form-group">
@@ -84,16 +94,16 @@
                                 <input id="nro_identificacion" name="nro_identificacion" type="text"  placeholder="" class="form-control input-md">
                             </div>
                         </div>
-                        
+
                         <br/>
-                        
+
                         <div class="container">
                             <button type="submit" class="btn btn-primary btn-lg col-md-4" name="accion" value="Reporte Usuario">Reporte Usuario</button>
                             <button type="submit" class="btn btn-primary btn-lg col-md-4" name="accion" value="Listar Usuarios" style="margin-left: 10px;">Listar Usuarios</button>
                         </div>
-                        
 
-                        
+
+
 
                     </fieldset>
                 </form>

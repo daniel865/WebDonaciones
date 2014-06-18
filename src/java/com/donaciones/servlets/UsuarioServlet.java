@@ -200,27 +200,36 @@ public class UsuarioServlet extends HttpServlet {
             }
             request.getRequestDispatcher("RegistrarUsuario.jsp").forward(request, response);
         } else if ("Reporte Usuario".equals(accion)) {
+            UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
             System.out.println("Entro Reporte Usuario");
             String documento = request.getParameter("nro_identificacion");
+            Usuario usuario;
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/bd_donaciones", "dba_donaciones", "donaciones");
+                usuario = usuarioDAO.buscarUsuario(documento);
 
-                ServletOutputStream servletOutputStream = response.getOutputStream();
-                File reportFile = new File(getServletConfig().getServletContext().getRealPath("WEB-INF/ReporteUsuario.jasper"));
-                byte[] bytes = null;
+                if (usuario != null) {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/bd_donaciones", "dba_donaciones", "donaciones");
 
-                HashMap parametros = new HashMap();
-                parametros.put("id_usu", documento);
+                    ServletOutputStream servletOutputStream = response.getOutputStream();
+                    File reportFile = new File(getServletConfig().getServletContext().getRealPath("WEB-INF/ReporteUsuario.jasper"));
+                    byte[] bytes = null;
 
-                bytes = JasperRunManager.runReportToPdf(reportFile.getPath(), parametros, connection);
+                    HashMap parametros = new HashMap();
+                    parametros.put("id_usu", documento);
 
-                response.setContentType("application/pdf");
-                response.setContentLength(bytes.length);
+                    bytes = JasperRunManager.runReportToPdf(reportFile.getPath(), parametros, connection);
 
-                servletOutputStream.write(bytes, 0, bytes.length);
-                servletOutputStream.flush();
-                servletOutputStream.close();
+                    response.setContentType("application/pdf");
+                    response.setContentLength(bytes.length);
+
+                    servletOutputStream.write(bytes, 0, bytes.length);
+                    servletOutputStream.flush();
+                    servletOutputStream.close();
+                } else {
+                    request.setAttribute("mensaje", "El Usuario No Existe");
+                    request.getRequestDispatcher("ReporteUsuario.jsp").forward(request, response);
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();
