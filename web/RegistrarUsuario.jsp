@@ -121,7 +121,7 @@
                     <!-- Coleccion de links del nav parte superior derecha -->
                     <ul class="nav navbar-nav navbar-right navbar-user">
                         <li><a>Ayuda</a></li>
-                        <li><a href="index.jsp">Salir</a></li>
+                        <li><a href="index.html">Salir</a></li>
                     </ul>
 
                 </div> <!-- Fin Barra Colapsada -->

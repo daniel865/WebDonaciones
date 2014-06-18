@@ -25,34 +25,6 @@
         <script src="js/jquery-1.10.2.js"></script> 
         <script src="js/bootstrap.js"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript">
-            google.load("visualization", "1", {packages: ["corechart"]});
-            google.setOnLoadCallback(drawChart);
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Tipo de Sangre', 'Cantidad'],
-                    ['A+', 11],
-                    ['A-', 89],
-                    ['AB+', 50],
-                    ['AB-', 28],
-                    ['B+', 30],
-                    ['B-', 31],
-                    ['O+', 10],
-                    ['O-', 10]
-                ]);
-
-                var options = {
-                    title: 'Cantidades de Sangre Donada por Tipo',
-                    is3D: true,
-                };
-
-                var chart = new google.visualization.PieChart(document.getElementById('flot-chart-pie'));
-                chart.draw(data, options);
-            }
-        </script>
-
-
-
     </head>
     <body>
         <div id="wrapper">
@@ -97,7 +69,7 @@
                     <!-- Coleccion de links del nav parte superior derecha -->
                     <ul class="nav navbar-nav navbar-right navbar-user">
                         <li><a>Ayuda</a></li>
-                        <li><a href="index.jsp">Salir</a></li>
+                        <li><a href="index.html">Salir</a></li>
                     </ul>
 
                 </div> <!-- Fin Barra Colapsada -->
@@ -105,42 +77,9 @@
 
             <!-- Comienzo del contenido interno de la página -->
             <div class="container">
-                <br>
-                <br>
-
-                <h1>Bienvenido al Sistema de Gestión de Donaciones de Sangre</h1>
-                
-                <br>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Cantidad Bolsas de Sangre por Tipo</h3>
-                            </div>
-                            <div class="panel-body">
-                                <!-- Contenido del Chart -->
-                                <div class="flot-chart container">
-                                    <div id="flot-chart-pie" style="width: 1000px; height: 415px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-
-
+ 
             </div>
-
-
-
-
         </div>
-
-
 
     </body>
 </html>
