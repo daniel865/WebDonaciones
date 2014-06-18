@@ -87,9 +87,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-clipboard"></i> Reportes<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Reporte Donantes</a></li>
-                                <li><a href="#">Reporte Bolsas de Sangre</a></li>
-                                <li><a href="#">Reporte Jornadas de Donación</a></li>
+                                <li><a href="ReporteUsuario.jsp">Reporte Usuarios</a></li>
+                                <li><a href="ReporteJornada.jsp">Reporte Jornadas de Donación</a></li> 
                             </ul>
                         </li> 
                     </ul>

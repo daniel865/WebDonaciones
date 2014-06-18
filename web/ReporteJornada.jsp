@@ -7,13 +7,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    String mensaje = request.getParameter("mensaje")!=null ? (String) request.getParameter("mensaje") : null;
+    String mensaje = request.getAttribute("mensaje") != null ? (String) request.getAttribute("mensaje") : null;
 %>
 
 <%if (mensaje != null) {%>
 <script>
     alert('<%=mensaje%>');
-
 </script>
 <%}%>
 
@@ -61,9 +60,8 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-clipboard"></i> Reportes<b class="caret"></b></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Reporte Donantes</a></li>
-                                <li><a href="#">Reporte Bolsas de Sangre</a></li>
-                                <li><a href="#">Reporte Jornadas de Donación</a></li>
+                                <li><a href="ReporteUsuario.jsp">Reporte Usuarios</a></li>
+                                <li><a href="ReporteJornada.jsp">Reporte Jornadas de Donación</a></li> 
                             </ul>
                         </li> 
                     </ul>
