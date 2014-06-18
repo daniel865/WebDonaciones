@@ -94,9 +94,7 @@ public class BolsaServlet extends HttpServlet {
                 request.setAttribute("grupo_sanguineo", bolsa.getGrupo_sanguineo());
                 request.setAttribute("rh", bolsa.getRh());
                 request.setAttribute("recoleccion", bolsa.getFecha_donacion() );
-                System.out.println("Servlet recoleccion: "+bolsa.getFecha_donacion());
                 request.setAttribute("vencimiento", bolsa.getFecha_vencimiento() );
-                System.out.println("Servlet vencimiento: "+bolsa.getFecha_vencimiento());
                 request.setAttribute("cantidad", Integer.toString(bolsa.getCantidad_sangre()) );
                 request.setAttribute("observaciones", bolsa.getObservaciones());
                 request.setAttribute("estado", bolsa.getEstado());
