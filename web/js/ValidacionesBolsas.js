@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 //recoleccion,vencimiento,cantidad,entrega,observaciones,estado
 $(document).ready(function() {
     $('#FormBolsas').validate_popover({
@@ -11,7 +6,7 @@ $(document).ready(function() {
                 digits: true,
                 required: true
             },
-            cod_jornada:{
+            cod_jornada: {
                 required: true
             },
             grupo_sanguineo: {
@@ -39,6 +34,9 @@ $(document).ready(function() {
         messages: {
             codigo: {
                 digits: "Por favor, Ingrese solamente números",
+                required: "Campo Obligatorio"
+            },
+            cod_jornada: {
                 required: "Campo Obligatorio"
             },
             grupo_sanguineo: {
@@ -92,7 +90,7 @@ $(document).ready(function() {
             else {
                 $("#estado option[value=Activo]").attr("selected", true);
             }
-        }else {
+        } else {
             alert("Busqué primero una bolsa a eliminar");
         }
     });

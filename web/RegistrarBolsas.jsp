@@ -146,7 +146,7 @@
                         <br>
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="codigo">Código Bolsa de Sangre</label>  
+                            <label class="col-md-4 control-label" for="codigo">Código Bolsa de Sangre*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="codigo" name="codigo" type="text" placeholder="" class="form-control input-md" required="" value="<%=codigo%>">
 
@@ -155,7 +155,7 @@
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="cod_jornada">Código Jornada</label>
+                            <label class="col-md-4 control-label" for="cod_jornada">Jornada de Donación*</label>
                             <div class="col-md-4 input-group">
                                 <select id="cod_jornada" name="cod_jornada" class="form-control">
                                     <option value="">Selecione una Jornada</option>
@@ -172,7 +172,7 @@
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="grupo_sanguineo">Grupo Sanguíneo</label>
+                            <label class="col-md-4 control-label" for="grupo_sanguineo">Grupo Sanguíneo*</label>
                             <div class="col-md-4 input-group">
                                 <select id="grupo_sanguineo" name="grupo_sanguineo" class="form-control">
                                     <option value=""></option>
@@ -187,7 +187,7 @@
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="rh">Factor RH</label>
+                            <label class="col-md-4 control-label" for="rh">Factor RH*</label>
                             <div class="col-md-4 input-group">
                                 <select id="rh" name="rh" class="form-control">
                                     <option value=""></option>
@@ -200,7 +200,7 @@
 
                         <!-- Date Fecha de Recoleccion -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="recoleccion">Fecha de Recolección</label>
+                            <label class="col-md-4 control-label" for="recoleccion">Fecha de Recolección*</label>
                             <div class="col-md-4 input-group">
                                 <input id="recoleccion" name="recoleccion" type="date" placeholder="" class="form-control input-md" required="" value="<%=recoleccion%>">
 
@@ -209,7 +209,7 @@
 
                         <!-- Date Fecha de Vencimiento -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="vencimiento">Fecha de Vencimiento</label>
+                            <label class="col-md-4 control-label" for="vencimiento">Fecha de Vencimiento*</label>
                             <div class="col-md-4 input-group">
                                 <input id="vencimiento" name="vencimiento" type="date" placeholder="" class="form-control input-md" required="" value="<%=vencimiento%>">
 
@@ -218,7 +218,7 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="cantidad">Cantidad de Sangre</label>  
+                            <label class="col-md-4 control-label" for="cantidad">Cantidad de Sangre*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="cantidad" name="cantidad" type="text" placeholder="Cm3" class="form-control input-md" required="" value="<%=cantidad%>">
 
@@ -237,7 +237,7 @@
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="estado">Estado</label>
+                            <label class="col-md-4 control-label" for="estado">Estado*</label>
                             <div class="col-md-4 input-group">
                                 <select id="estado" name="estado" class="form-control">
                                     <option value=""></option>
@@ -258,6 +258,9 @@
                             <button type="button" class="btn btn-default" name="btneliminar" id="btneliminar">Eliminar</button> 
                         </div>
 
+                        <br/>
+                        <br/>
+                        
                     </fieldset>
                 </form>
 
