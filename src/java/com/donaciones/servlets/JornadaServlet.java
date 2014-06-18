@@ -108,7 +108,7 @@ public class JornadaServlet extends HttpServlet {
             Jornada jornada;
             try {
                 jornada = jornadaDAO.buscarJornada(id_jor);
-                System.out.println("Onservaciones: "+jornada.getObservaciones());
+                System.out.println("Onservaciones: " + jornada.getObservaciones());
                 request.setAttribute("mensaje", "La jornada fue encontrada");
                 request.setAttribute("codigo", jornada.getCodigo());
                 request.setAttribute("descripcion", jornada.getDescripcion());
@@ -284,29 +284,29 @@ public class JornadaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        /*
+         try {
+         MunicipioDAO municipioDAO = new MunicipioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
 
-        try {
-            MunicipioDAO municipioDAO = new MunicipioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
-
-            String selectedValue = request.getParameter("value");
-            System.out.println("Departamento: " + request.getParameter("departamento"));
-            System.out.println("Valor: " + request.getParameter("value"));
-            List<Municipio> listMunDep = municipioDAO.getMunicipiosDepartamento(Integer.parseInt(selectedValue));
-            Map<String, String> options = new HashMap<>();
-            for (int i = 0; i < listMunDep.size(); i++) {
-                Municipio municipio = listMunDep.get(i);
-                options.put(Integer.toString(municipio.getId()), municipio.getNombre());
-            }
-            System.out.println(options.toString());
-            String json = new Gson().toJson(options);
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
-            response.getWriter().write(json);
-            request.setAttribute("listMunicipios", listMunDep);
-        } catch (Exception ex) {
-            Logger.getLogger(JornadaServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+         String selectedValue = request.getParameter("value");
+         System.out.println("Departamento: " + request.getParameter("departamento"));
+         System.out.println("Valor: " + request.getParameter("value"));
+         List<Municipio> listMunDep = municipioDAO.getMunicipiosDepartamento(Integer.parseInt(selectedValue));
+         Map<String, String> options = new HashMap<>();
+         for (int i = 0; i < listMunDep.size(); i++) {
+         Municipio municipio = listMunDep.get(i);
+         options.put(Integer.toString(municipio.getId()), municipio.getNombre());
+         }
+         System.out.println(options.toString());
+         String json = new Gson().toJson(options);
+         response.setContentType("application/json");
+         response.setCharacterEncoding("UTF-8");
+         response.getWriter().write(json);
+         request.setAttribute("listMunicipios", listMunDep);
+         } catch (Exception ex) {
+         Logger.getLogger(JornadaServlet.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         */
     }
 
     /**
