@@ -49,8 +49,7 @@
         <script src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/jquery.validate.bootstrap.popover.min.js"></script>
-        <script type="text/javascript"></script>
-
+        <script type="text/javascript" src="js/ValidacionesJornada.js"></script>
     </head>
     <body>
         <div id="wrapper">

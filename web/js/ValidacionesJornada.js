@@ -5,7 +5,7 @@ $(document).ready(function() {
                 digits: true,
                 required: true
             },
-            fecha_programada:{
+            fecha_programada: {
                 required: true,
                 date: true
             },
@@ -55,23 +55,46 @@ $(document).ready(function() {
                 digits: "Por favor, Ingrese solamente números",
                 required: "Campo Obligatorio"
             },
-            grupo_sanguineo: {
-                required: "Campo Obligatorio"
-            },
-            rh: {
-                required: "Campo Obligatorio"
-            },
-            recoleccion: {
+            fecha_programada: {
                 required: "Campo Obligatorio",
-                date: "Formato de Fecha Incorrecto"
+                date: "Formato de Fecho Incorrecto"
             },
-            vencimiento: {
-                required: "Campo Obligatorio",
-                date: "Formato de Fecha Incorrecto"
-            },
-            cantidad: {
-                digits: "Por favor, Ingrese solamente números",
+            departamento: {
                 required: "Campo Obligatorio"
+            },
+            municipio: {
+                required: "Campo Obligatorio"
+            },
+            direccion: {
+                required: "Campo Obligatorio"
+            },
+            donantes: {
+                required: "Campo Obligatorio",
+                digits: "Por favor, Ingrese solamente números"
+            },
+            sangre_a1: {
+                digits: "Por favor, Ingrese solamente números"
+            },
+            sangre_a2: {
+                digits: "Por favor, Ingrese solamente números"
+            },
+            sangre_ab1: {
+                digits: "Por favor, Ingrese solamente números"
+            },
+            sangre_ab2: {
+                digits: "Por favor, Ingrese solamente números"
+            },
+            sangre_b1: {
+                digits: "Por favor, Ingrese solamente números"
+            },
+            sangre_b2: {
+                digits: "Por favor, Ingrese solamente números"
+            },
+            sangre_o1: {
+                digits: "Por favor, Ingrese solamente números"
+            },
+            sangre_o2: {
+                digits: "Por favor, Ingrese solamente números"
             },
             estado: {
                 required: "Campo Obligatorio"
