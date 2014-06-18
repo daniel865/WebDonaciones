@@ -16,13 +16,16 @@ $(document).ready(function() {
                 digits: true,
                 required: true
             },
-            nombre: {
+            nombres: {
                 lettersonly: true,
                 required: true
             },
-            apellidos: {
+            apellido1: {
                 lettersonly: true,
                 required: true
+            },
+            apellido2: {
+                lettersonly: true
             },
             usuario: {
                 required: true
@@ -49,13 +52,16 @@ $(document).ready(function() {
                 digits: "Números únicamente",
                 required: "Campo Obligatorio"
             },
-            nombre: {
+            nombres: {
                 lettersonly: "Letras únicamente",
                 required: "Campo Obligatorio"
             },
-            apellidos: {
+            apellido1: {
                 lettersonly: "Letras únicamente",
                 required: "Campo Obligatorio"
+            },
+            apellido2: {
+              lettersonly: "Letras únicamente"  
             },
             usuario: {
                 required: "Campo Obligatorio"
@@ -236,7 +242,7 @@ $(document).ready(function() {
             else {
                 $("#estado option[value=Activo]").attr("selected", true);
             }
-        }else {
+        } else {
             alert("Busqué primero un usuario a eliminar");
         }
 

@@ -132,7 +132,7 @@
 
             <div class="container" >
 
-                <form id="FormUsuario" class="form-horizontal"  action="UsuarioServlet" method="POST">
+                <form name="FormUsuario" id="FormUsuario" class="form-horizontal"  action="UsuarioServlet" method="POST">
                     <fieldset>
 
 
@@ -142,29 +142,27 @@
                         <br>
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="nro_identificacion">Número de Identificación</label>  
+                            <label class="col-md-4 control-label" for="nro_identificacion">Número de Identificación*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="nro_identificacion" name="nro_identificacion" type="text" placeholder="" class="form-control input-md" value="<%=nro_identificacion%>" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+
                             </div>
                         </div>
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="nombres">Nombres</label>
+                            <label class="col-md-4 control-label" for="nombres">Nombres*</label>
                             <div class="col-md-4 input-group">
                                 <input id="nombres" name="nombres" placeholder="" class="form-control input-md"  required="" type="text" value="<%=nombres%>" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="apellido1">Primer Apellido</label>  
+                            <label class="col-md-4 control-label" for="apellido1">Primer Apellido*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="apellidos" name="apellido1" placeholder="" class="form-control input-md" required="" type="text" value="<%=apellido1%>" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
@@ -173,25 +171,22 @@
                             <label class="col-md-4 control-label" for="apellido2">Segundo Apellido</label>  
                             <div class="col-md-4 input-group">
                                 <input id="apellidos" name="apellido2" placeholder="" class="form-control input-md" required="" type="text" value="<%=apellido2%>" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>        
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="usuario">Usuario</label>  
+                            <label class="col-md-4 control-label" for="usuario">Usuario*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="usuario" name="usuario" placeholder="" class="form-control input-md"  type="text" value="<%=usuario%>" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Password input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="pass">Contraseña</label>
+                            <label class="col-md-4 control-label" for="pass">Contraseña*</label>
                             <div class="col-md-4 input-group">
                                 <input id="pass" name="pass" placeholder="" class="form-control input-md"  type="password" value="<%=pass%>" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
@@ -200,45 +195,45 @@
                             <label class="col-md-4 control-label" for="pass2">Confirme Contraseña</label>
                             <div class="col-md-4 input-group">
                                 <input id="pass2" name="pass2" placeholder="" class="form-control input-md"  type="password" value="<%=pass%>" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Campo de Correo -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="correo">Correo electrónico</label>
+                            <label class="col-md-4 control-label" for="correo">Correo electrónico*</label>
                             <div class="col-md-4 input-group">
                                 <input id="correo" name="correo" placeholder="" class="form-control input-md"  type="text" value="<%=correo%>" >
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="perfil">Perfil</label>
+                            <label class="col-md-4 control-label" for="perfil">Perfil*</label>
                             <div class="col-md-4 input-group">
                                 <select id="perfil" name="perfil" class="form-control" >
                                     <option value=""></option>                                  
                                     <option value="Medico">Médico</option>
                                     <option value="Enfermera">Enfermera(o)</option>
                                     <option value="Bacteriologo">Bacteriólogo(a)</option>
-
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
                         </div>
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="estado">Estado</label>
+                            <label class="col-md-4 control-label" for="estado">Estado*</label>
                             <div class="col-md-4 input-group">
                                 <select id="estado" name="estado" class="form-control"  >
                                     <option value=""></option>  
                                     <option value="Activo">Activo</option>
                                     <option value="Inactivo">Inactivo</option>
                                 </select>
-                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
                             </div>
+                        </div>
+
+                        <!-- Select Basic -->
+                        <div class="form-group container" style="margin-left: 290px;">
+                            <label class="col-md-4 control-label">Los campos con * son obligatorios</label>
                         </div>
 
 
@@ -263,6 +258,9 @@
                         </div>
 
                     </fieldset>
+
+
+
                 </form>
 
                 <!-- Modal Buscar-->

@@ -45,8 +45,11 @@ public class UsuarioServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String accion = request.getParameter("accion");
+        accion = accion == null ? "Inicio" : accion;
 
-        if ("Guardar".equals(accion)) {
+        if ("Inicio".equals(accion)) {
+            request.getRequestDispatcher("RegistrarUsuario.jsp").forward(request, response);
+        } else if ("Guardar".equals(accion)) {
             UsuarioDAO usuarioDAO = new UsuarioDAO(new Conexion("dba_donaciones", "donaciones", "jdbc:mysql://localhost/bd_donaciones"));
             String nro_identificacion = request.getParameter("nro_identificacion");
             String nombres = request.getParameter("nombres");

@@ -1,35 +1,49 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-//recoleccion,vencimiento,cantidad,entrega,observaciones,estado
 $(document).ready(function() {
-    $('#FormBolsas').validate_popover({
+    $('#FormJornada').validate_popover({
         rules: {
             codigo: {
                 digits: true,
                 required: true
             },
-            cod_jornada:{
-                required: true
-            },
-            grupo_sanguineo: {
-                required: true
-            },
-            rh: {
-                required: true
-            },
-            recoleccion: {
-                date: true,
-                required: true
-            },
-            vencimiento: {
+            fecha_programada:{
                 required: true,
                 date: true
             },
-            cantidad: {
+            departamento: {
+                required: true
+            },
+            municipio: {
+                required: true
+            },
+            direccion: {
+                required: true
+            },
+            donantes: {
                 required: true,
+                digits: true
+            },
+            sangre_a1: {
+                digits: true
+            },
+            sangre_a2: {
+                digits: true
+            },
+            sangre_ab1: {
+                digits: true
+            },
+            sangre_ab2: {
+                digits: true
+            },
+            sangre_b1: {
+                digits: true
+            },
+            sangre_b2: {
+                digits: true
+            },
+            sangre_o1: {
+                digits: true
+            },
+            sangre_o2: {
                 digits: true
             },
             estado: {
@@ -76,26 +90,3 @@ $(document).ready(function() {
     });
 
 }); // end document.ready
-
-//******************************************************************************
-// FUNCION QUE SE ENCARGA DE HABILITAR O DESHABILITAR EL USUARIO
-//******************************************************************************
-$(document).ready(function() {
-    $("#btneliminar").click(function() {
-        var estado = $("#estado").val();
-        var codigo = $("#codigo").val();
-        var cod_jornada = $("#cod_jornada").val();
-        if (codigo !== "" && cod_jornada !== "") {
-            if (estado === "Activo") {
-                $("#estado option[value=Inactivo]").attr("selected", true);
-            }
-            else {
-                $("#estado option[value=Activo]").attr("selected", true);
-            }
-        }else {
-            alert("Busqué primero una bolsa a eliminar");
-        }
-    });
-});
-
-

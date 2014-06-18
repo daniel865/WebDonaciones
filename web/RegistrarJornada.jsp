@@ -105,7 +105,7 @@
             <!--  Inicio del Formulario-->
             <div class="container">
 
-                <form class="form-horizontal" action="JornadaServlet" method="POST">
+                <form class="form-horizontal" action="JornadaServlet" method="POST" id="FormJornada" name="FormJornada">
                     <fieldset>
 
                         <!-- Form Name -->
