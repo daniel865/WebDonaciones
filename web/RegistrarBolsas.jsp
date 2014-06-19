@@ -250,7 +250,7 @@
                         </div>
 
                         <!-- Groups Buttons -->
-                        <div class="btn-group col-lg-offset-4 col-lg-4">
+                        <div class="btn-group col-lg-offset-4 col-lg-5">
                             <input type="submit" class="btn btn-default " name="accion" value="Guardar" id="btnguardar" style="margin-left: 10px;" />
                             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#ModalBuscar" name="btnbuscar" id="btnbuscar" style="margin-left: 10px;">Consultar</button>
                             <input type="submit" class="btn btn-default" name="accion" value="Modificar" id="btnmodificar" style="margin-left: 10px;"/> 

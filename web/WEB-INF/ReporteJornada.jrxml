@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2cdb3b0a-11b8-4494-b03a-5f67148c799c">
-	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="140"/>
+	<property name="ireport.y" value="0"/>
 	<parameter name="cod_jor" class="java.lang.String">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -53,16 +53,16 @@ WHERE
 	<title>
 		<band height="99" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="555" height="43" uuid="e0f7d0bd-4d6a-4526-9eb7-2271f74ffc2f"/>
+				<reportElement x="1" y="22" width="555" height="43" uuid="e0f7d0bd-4d6a-4526-9eb7-2271f74ffc2f"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Bookman Old Style" size="14" isBold="true" isUnderline="true"/>
+					<font fontName="Bookman Old Style" size="22" isBold="true" isItalic="true" isUnderline="true"/>
 				</textElement>
 				<text><![CDATA[Detalle - Reporte Jornada]]></text>
 			</staticText>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="254" splitType="Stretch">
+		<band height="193" splitType="Stretch">
 			<staticText>
 				<reportElement x="31" y="0" width="105" height="20" uuid="81f2a5a9-acc2-4351-be57-62af752d53b9"/>
 				<textElement verticalAlignment="Middle">

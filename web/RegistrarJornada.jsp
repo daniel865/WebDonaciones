@@ -135,7 +135,7 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="codigo">Código</label>  
+                            <label class="col-md-4 control-label" for="codigo">Código*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="codigo" name="codigo" type="text" placeholder="" class="form-control input-md" value="<%=codigo%>">
 
@@ -144,7 +144,7 @@
 
                         <!-- Textarea -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="descripcion">Descripción</label>
+                            <label class="col-md-4 control-label" for="descripcion">Descripción*</label>
                             <div class="col-md-4 input-group">                     
                                 <textarea class="form-control" id="descripcion" name="descripcion"><%=descripcion%></textarea>
 
@@ -153,7 +153,7 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="fecha_programada">Fecha Programada</label>  
+                            <label class="col-md-4 control-label" for="fecha_programada">Fecha Programada*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="fecha_programada" name="fecha_programada" type="date" placeholder="" class="form-control input-md" value="<%=fecha_programada%>">
 
@@ -162,7 +162,7 @@
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="departamento">Departamento</label>
+                            <label class="col-md-4 control-label" for="departamento">Departamento*</label>
                             <div class="col-md-4 input-group">
                                 <select id="departamento" name="departamento" class="form-control">
                                     <option>Seleccione un Departamento</option>
@@ -178,7 +178,7 @@
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="municipio">Municipio</label>
+                            <label class="col-md-4 control-label" for="municipio">Municipio*</label>
                             <div class="col-md-4 input-group">
                                 <select id="municipio" name="municipio" class="form-control">
                                     <option>Seleccione un Municipio</option>
@@ -194,7 +194,7 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="direccion">Dirección</label>  
+                            <label class="col-md-4 control-label" for="direccion">Dirección*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="direccion" name="direccion" type="text" placeholder="" class="form-control input-md" value="<%= direccion%>">
 
@@ -203,7 +203,7 @@
 
                         <!-- Text input-->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="donantes">Donantes</label>  
+                            <label class="col-md-4 control-label" for="donantes">Donantes*</label>  
                             <div class="col-md-4 input-group">
                                 <input id="donantes" name="donantes" type="text" placeholder="" class="form-control input-md" value="<%= donantes%>" >
 
@@ -291,7 +291,7 @@
 
                         <!-- Select Basic -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="estado">Estado</label>
+                            <label class="col-md-4 control-label" for="estado">Estado*</label>
                             <div class="col-md-4 input-group">
                                 <select id="estado" name="estado" class="form-control">
                                     <option value="Activo">Activo</option>
@@ -310,7 +310,7 @@
                     <input type="hidden" name="cargoMunicipios" id="cargoMunicipios" />
 
                     <!-- Groups Buttons -->
-                    <div class="btn-group col-lg-offset-4 col-lg-4">
+                    <div class="btn-group col-lg-offset-4 col-lg-5">
                         <!--<button type="button" class="btn btn-default" name="btnnuevo" id="btnnuevo">Nuevo</button>-->
                         <input type="submit" class="btn btn-default " name="accion" value="Guardar" id="btnguardar" style="margin-left: 10px;"/>
                         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#ModalBuscar" name="btnbuscar" id="btnbuscar" style="margin-left: 10px;">Consultar</button>
