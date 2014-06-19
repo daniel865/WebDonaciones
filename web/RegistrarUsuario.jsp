@@ -238,12 +238,11 @@
 
 
                         <!-- Groups Buttons -->
-                        <div class="btn-group col-lg-offset-4 col-lg-4">
-                            <!--<button type="button" class="btn btn-default" name="btnnuevo" id="btnnuevo">Nuevo</button>-->
-                            <input type="submit" class="btn btn-default" name="accion" value="Guardar" id="btnguardar" />
+                        <div class="btn-group col-lg-offset-4 col-lg-5">
+                            <input type="submit" class="btn btn-default" name="accion" value="Guardar" id="btnguardar" style="margin-left: 10px;" />
 
                             <!-- Split button -->
-                            <div class="btn-group">
+                            <div class="btn-group" style="margin-left: 10px;">
                                 <button type="button" class="btn btn-default">Buscar</button>
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                     <span class="caret"></span>
@@ -255,8 +254,8 @@
                                 </ul>
                             </div>
 
-                            <input type="submit" class="btn btn-default" name="accion" value="Modificar" id="btnmodificar" /> 
-                            <button type="button" class="btn btn-default" name="btneliminar" id="btneliminar">Eliminar</button> 
+                            <input type="submit" class="btn btn-default" name="accion" value="Modificar" id="btnmodificar" style="margin-left: 10px;" /> 
+                            <button type="button" class="btn btn-default" name="btneliminar" id="btneliminar" style="margin-left: 10px;" >Eliminar</button> 
                         </div>
 
                     </fieldset>
